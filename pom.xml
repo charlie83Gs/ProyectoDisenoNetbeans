@@ -19,7 +19,7 @@
         <name>Your Organisation</name>
     </organization>
 
-    <build>
+    <build> 
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -104,5 +104,13 @@
             </plugin>
         </plugins>
     </build>
-
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.8.Final</version>
+        </dependency>
+    </dependencies>
+    
 </project>
