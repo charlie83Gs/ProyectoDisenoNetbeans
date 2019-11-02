@@ -16,8 +16,8 @@ package com.diseno.proyecto1diseno.model;
  */
 public class RequestFactory {
     
-    public EmployeeRequest createEmployeeRequest(RequestType type, Object payload){
-        return new EmployeeRequest(type, payload);
+    public EmployeeRequest createEmployeeRequest(RequestType type, Object payload, Employee employee){
+        return new EmployeeRequest(type, payload, employee);
     }
     
     public ClientRequest createClientRequest(RequestType type, Object payload){

@@ -17,11 +17,13 @@ package com.diseno.proyecto1diseno.model;
 public class Employee extends User{
     Role[] roles;
     Calification[] califications;
+    Study[] studies;
 
-    public Employee(int id, String name, String phone, String email,Role[] roles,Calification[] califications) {
+    public Employee(int id, String name, String phone, String email,Role[] roles,Calification[] califications, Study[] studies) {
         super(id, name, phone, email); 
         this.roles = roles;
         this.califications = califications;
+        this.studies = studies;
     }
 
     public Role[] getRoles() {

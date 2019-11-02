@@ -12,7 +12,16 @@ package com.diseno.proyecto1diseno.model;
 public class EmployeeRequest implements Request{
     private RequestType type;
     private Object payload;
+    Employee employee;
 
+
+    public EmployeeRequest(RequestType type, Object payload, Employee employee) {
+        this.type = type;
+        this.payload = payload;
+        this.employee = employee;
+    }
+    
+    
     
     @Override
     public RequestType getType() {
@@ -30,6 +39,12 @@ public class EmployeeRequest implements Request{
     public void setPayload(Object payload) {
         this.payload = payload;
     }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+    
+    
 
 
     
