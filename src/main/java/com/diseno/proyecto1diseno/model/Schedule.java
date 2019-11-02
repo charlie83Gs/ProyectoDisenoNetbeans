@@ -99,8 +99,5 @@ public class Schedule {
         this.sunday = sunday;
     }
 
-
-    
-
     
 }
