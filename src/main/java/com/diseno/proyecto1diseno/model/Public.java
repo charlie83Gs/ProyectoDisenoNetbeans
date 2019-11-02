@@ -9,12 +9,20 @@ package com.diseno.proyecto1diseno.model;
  *
  * @author Charlie
  */
-public  interface Request {
-    public RequestType getType();
-    public void setType(RequestType type);
-    public Object getPayload();
-    public void setPayload(Object payload);
+public class Public {
+    String name;
+
+    public Public(String name) {
+        this.name = name;
+    }
     
-   
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     
 }
