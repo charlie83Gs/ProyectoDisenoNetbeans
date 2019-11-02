@@ -9,12 +9,8 @@ package com.diseno.proyecto1diseno.model;
  *
  * @author Charlie
  */
-public  interface Request {
-    public RequestType getType();
-    public void setType(RequestType type);
-    public Object getPayload();
-    public void setPayload(Object payload);
-    
-   
+public class Calification {
+    private int value;
+    private String comment;
     
 }
