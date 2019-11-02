@@ -9,23 +9,23 @@ package com.diseno.proyecto1diseno.model;
  *
  * @author Evelio
  */
-public class Treatment {
-    private int idTreatment;
+public class Complain {
+    private int idComplain;
     private String name;
     private String description;
     
-    public Treatment(int idTreatment, String name, String description) {
-        this.idTreatment = idTreatment;
+    public Complain(int idComplain, String name, String description) {
+        this.idComplain = idComplain;
         this.name = name;
         this.description = description;
     }
     
-    public int getIdTreatment() {
-        return idTreatment;
+    public int getIdComplain() {
+        return idComplain;
     }
 
-    public void setIdTreatment(int idDisease) {
-        this.idTreatment = idDisease;
+    public void setIdComplain(int idComplain) {
+        this.idComplain = idComplain;
     }
 
     public String getName() {
@@ -43,4 +43,5 @@ public class Treatment {
     public void setDescription(String description) {
         this.description = description;
     }
+    
 }
