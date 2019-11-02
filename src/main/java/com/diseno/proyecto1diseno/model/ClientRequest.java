@@ -12,12 +12,15 @@ package com.diseno.proyecto1diseno.model;
 public class ClientRequest implements Request{
     private RequestType type;
     private Object payload;
+    Client client;
 
-    public ClientRequest(RequestType type, Object payload) {
+    public ClientRequest(RequestType type, Object payload, Client client) {
         this.type = type;
         this.payload = payload;
+        this.client = client;
     }
     
+
     
     @Override
     public RequestType getType() {
@@ -34,6 +37,10 @@ public class ClientRequest implements Request{
     @Override
     public void setPayload(Object payload) {
         this.payload = payload;
+    }
+
+    public Client getClient() {
+        return client;
     }
 
 }
