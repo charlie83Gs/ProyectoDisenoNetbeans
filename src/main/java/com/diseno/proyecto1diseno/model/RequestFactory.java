@@ -20,7 +20,7 @@ public class RequestFactory {
         return new EmployeeRequest(type, payload, employee);
     }
     
-    public ClientRequest createClientRequest(RequestType type, Object payload){
-        return new ClientRequest(type, payload);
+    public ClientRequest createClientRequest(RequestType type, Object payload, Client client){
+        return new ClientRequest(type, payload, client);
     }
 }
