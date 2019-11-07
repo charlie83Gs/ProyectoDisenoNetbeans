@@ -5,6 +5,13 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
 /**
  *
  * @author Charlie
@@ -14,35 +21,66 @@ package com.diseno.proyecto1diseno.model;
  * 
  * 
  */
+@Entity
+@Table(name="employees")
 public class Employee extends User{
-    Role[] roles;
-    Calification[] califications;
-    Study[] studies;
-
-    public Employee(int id, String name, String phone, String email,Role[] roles,Calification[] califications, Study[] studies) {
-        super(id, name, phone, email); 
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Role> roles = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Calification> califications = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Study> studies = new ArrayList<>();
+    
+    
+    private Employee(){
+        
+    }
+    
+    public Employee(String name, String phone, String email, String password) {
+        super(name, phone, email, password); 
+    }
+    
+    public Employee(String name, String phone, String email, String password,
+                List<Role> roles, List<Calification> califications, List<Study> studies) {
+        super(name, phone, email, password);
         this.roles = roles;
         this.califications = califications;
         this.studies = studies;
+        
     }
 
-    public Role[] getRoles() {
+    /**
+     * @return the roles
+     */
+    public List<Role> getRoles() {
         return roles;
     }
-
-    public void setRoles(Role[] roles) {
-        this.roles = roles;
+    
+    public void addRole(Role role){
+        roles.add(role);
     }
 
-    public Calification[] getCalifications() {
+    /**
+     * @return the califications
+     */
+    public List<Calification> getCalifications() {
         return califications;
     }
 
-    public void setCalifications(Calification[] califications) {
-        this.califications = califications;
+    public void addCalification(Calification calificaction){
+        califications.add(calificaction);
     }
     
+    /**
+     * @return the studies
+     */
+    public List<Study> getStudies() {
+        return studies;
+    }
     
-    
-    
+    public void addStudy(Study study){
+        studies.add(study);
+    }
+
 }

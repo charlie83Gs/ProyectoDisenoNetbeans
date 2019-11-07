@@ -12,10 +12,10 @@ import java.util.ArrayList;
  * @author Charlie
  */
 public class EmployeeBuilder {
-    int id;
     String name;
     String phone;
     String email;
+    String password;
     ArrayList<Role> roles;
     ArrayList<Calification> califications;
     ArrayList<Study> studies;
@@ -26,15 +26,11 @@ public class EmployeeBuilder {
         studies = new ArrayList<>();
         
         //default value
-        id = -1;
         name = "";
         phone = "";
         email = "";
+        password = "";
                 
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setName(String name) {
@@ -47,6 +43,10 @@ public class EmployeeBuilder {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public void setPassword(String password){
+        this.password = password;
     }
     
     public void addRole(Role role){
@@ -62,10 +62,7 @@ public class EmployeeBuilder {
     }
     
     public Employee getResult(){
-        Role[] roleArray = (Role[])roles.toArray();
-        Calification[] calificationArray = (Calification[])califications.toArray();
-        Study[] studyArray = (Study[])this.studies.toArray();
-        return new Employee(id,name,phone,email,roleArray,calificationArray,studyArray);
+        return new Employee(name,phone,email, password,roles,califications,studies);
         
     }
     

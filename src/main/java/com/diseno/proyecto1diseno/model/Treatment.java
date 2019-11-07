@@ -5,27 +5,39 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Evelio
  */
+@Entity
+@Table(name="treatments")
 public class Treatment {
-    private int idTreatment;
+    private static int CID = 0;
+    @Id
+    private int id;
     private String name;
     private String description;
     
-    public Treatment(int idTreatment, String name, String description) {
-        this.idTreatment = idTreatment;
+    public Treatment(){
+        
+    }
+    
+    public Treatment(String name, String description) {
+        this.id = CID++;
         this.name = name;
         this.description = description;
     }
     
-    public int getIdTreatment() {
-        return idTreatment;
+    public int getId() {
+        return id;
     }
 
-    public void setIdTreatment(int idDisease) {
-        this.idTreatment = idDisease;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

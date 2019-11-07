@@ -21,6 +21,8 @@ public class RequestFactory {
     }
     
     public ClientRequest createClientRequest(RequestType type, Object payload, Client client){
+
         return new ClientRequest(type, payload,client);
+
     }
 }

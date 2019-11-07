@@ -5,45 +5,71 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
 /**
  *
  * @author Evelio
  */
-public class Client {
-
-    private Disease[] disease;
-    private Treatment[] treatment;
-    private Complain [] complain;
+@Entity
+@Table(name="clients")
+public class Client extends User{
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Disease> diseases = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Treatment> treatments = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Complain> complains = new ArrayList<>();
     
-    public Client(Disease[] disease, Treatment[] treatment, Complain[] complain) {
-        this.disease = disease;
-        this.treatment = treatment;
-        this.complain = complain;
-    }
-
-    public Disease[] getDisease() {
-        return disease;
-    }
-
-    public void setDisease(Disease[] disease) {
-        this.disease = disease;
-    }
-
-    public Treatment[] getTreatment() {
-        return treatment;
-    }
-
-    public void setTreatment(Treatment[] treatment) {
-        this.treatment = treatment;
-    }
-
-    public Complain[] getComplain() {
-        return complain;
-    }
-
-    public void setComplain(Complain[] complain) {
-        this.complain = complain;
+    private Client(){
+        
     }
     
+    public Client(String name, String phone, String email, String password) {
+        super(name, phone, email, password);
+    }
+
+    /**
+     * @return the diseases
+     */
+    public List<Disease> getDiseases() {
+        return diseases;
+    }
+    
+    public void addDisease(Disease disease){
+        diseases.add(disease);
+    }
+    
+    /**
+     * @return the treatments
+     */
+    public List<Treatment> getTreatments() {
+        return treatments;
+    }
+
+    public void addTreatment(Treatment treatment){
+        treatments.add(treatment);
+    }
+    
+    /**
+     * @return the complains
+     */
+    public List<Complain> getComplains() {
+        return complains;
+    }
+    
+    public void addComplain(Complain complain){
+        complains.add(complain);
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" + name + '}';
+    }
     
 }
