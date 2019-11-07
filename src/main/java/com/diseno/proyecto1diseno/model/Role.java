@@ -5,16 +5,26 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Charlie
  */
+@Entity
+@Table(name="roles")
 public class Role {
+    private static int CID = 0;
+    @Id
+    private int id;
     String name;
     float salary;
     Task[] task;
 
     public Role(String name, float salary, Task[] task) {
+        this.id = CID++;
         this.name = name;
         this.salary = salary;
         this.task = task;

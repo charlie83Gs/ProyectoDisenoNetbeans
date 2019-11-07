@@ -5,21 +5,39 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
 /**
  *
  * @author Evelio
  */
-public class User {
-    private int id;
-    private String name;
-    private String phone;
-    private String email;
 
-    public User(int id, String name, String phone, String email) {
-        this.id = id;
+@Entity
+@Table(name="users")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class User {
+    private static int CID = 0;
+    @Id
+    protected int id;
+    protected String name;
+    protected String phone;
+    protected String email;
+    protected String password;
+
+    protected User(){
+        
+    }
+    
+    public User(String name, String phone, String email, String password) {
+        this.id = CID++;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.password = password;
     }
 
     public int getId() {

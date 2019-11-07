@@ -5,27 +5,35 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Evelio
  */
+@Entity
+@Table(name="complains")
 public class Complain {
-    private int idComplain;
+    private static int CID = 0;
+    @Id
+    private int id;
     private String name;
     private String description;
     
-    public Complain(int idComplain, String name, String description) {
-        this.idComplain = idComplain;
+    public Complain(String name, String description) {
+        this.id = CID++;
         this.name = name;
         this.description = description;
     }
     
-    public int getIdComplain() {
-        return idComplain;
+    public int getId() {
+        return id;
     }
 
-    public void setIdComplain(int idComplain) {
-        this.idComplain = idComplain;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
