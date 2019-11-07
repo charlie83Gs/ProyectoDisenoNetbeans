@@ -9,7 +9,7 @@ package com.diseno.proyecto1diseno.model;
  *
  * @author Charlie
  * 
- * Todo 
+ * Todo  
  * Add client to client request
  * Add employee to employee request
  * 
@@ -21,6 +21,8 @@ public class RequestFactory {
     }
     
     public ClientRequest createClientRequest(RequestType type, Object payload, Client client){
-        return new ClientRequest(type, payload, client);
+
+        return new ClientRequest(type, payload,client);
+
     }
 }
