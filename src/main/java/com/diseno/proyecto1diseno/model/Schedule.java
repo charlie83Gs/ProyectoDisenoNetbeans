@@ -6,12 +6,20 @@
 package com.diseno.proyecto1diseno.model;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 /**
  *
  * @author Charlie
  */
+@Entity
+@Table(name="schedules")
 public class Schedule {
+    @Id
+    private int id;
     private Date start;
     private Date end;
     private boolean monday;

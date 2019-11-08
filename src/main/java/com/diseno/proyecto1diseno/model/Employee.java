@@ -11,6 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 
 /**
  *
@@ -21,15 +24,18 @@ import javax.persistence.Table;
  * 
  * 
  */
+
 @Entity
 @Table(name="employees")
 public class Employee extends User{
-    
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany()
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Role> roles = new ArrayList<>();
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany()
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Calification> califications = new ArrayList<>();
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany()
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Study> studies = new ArrayList<>();
     
     
