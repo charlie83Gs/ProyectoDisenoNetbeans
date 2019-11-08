@@ -5,11 +5,20 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Evelio
  */
+
+@Entity
+@Table(name="studys")
 public class Study {
+     @Id
+    private int id;
     private String study;
     private float cost;
     private float payment;
