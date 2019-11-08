@@ -5,11 +5,19 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Charlie
  */
+@Entity
+@Table(name="publics")
 public class Public {
+    @Id
+    private int id;
     String name;
 
     public Public(String name) {
