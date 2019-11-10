@@ -69,9 +69,17 @@ public class PersistanceData {
     
     public static <T> void delete(int id, Class<T> clazz)
     {
+        //find transaction
+        T result = find(id,clazz);
+        
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.delete(find(id,clazz));
-        session.flush();
+        
+        //delete transaction
+        Transaction trans = session.beginTransaction();
+        
+        if(result != null) session.delete(result);
+        trans.commit();
+
     }
     
     public static <T> void update(T object){
@@ -85,6 +93,21 @@ public class PersistanceData {
         //-------------------------------------------------------------
     }
     
+    public static <T> T findByParam(String param,String value, Class clazz){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        //-------------------------------------------------------------
+        Transaction trans = session.beginTransaction();
+        
+        Criteria criteria = session.createCriteria(clazz);
+        criteria.add(Restrictions.eq(param,value));
+        T result = (T)criteria.uniqueResult();
+        
+        trans.commit();
+        //-------------------------------------------------------------
+        
+     
+        return result;
+    }
     
      public static Client validateLoginCli(String clientName, String clientPassword){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();

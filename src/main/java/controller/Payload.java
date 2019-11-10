@@ -34,6 +34,10 @@ public class Payload {
         return data.get(key);
     }
     
+    public boolean contains(String key){
+        return data.containsKey(key);
+    }
+    
     
     
 }

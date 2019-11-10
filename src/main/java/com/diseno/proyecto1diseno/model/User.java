@@ -6,6 +6,7 @@
 package com.diseno.proyecto1diseno.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -22,6 +23,7 @@ import javax.persistence.Table;
 public class User {
     private static int CID = 0;
     @Id
+    @GeneratedValue
     protected int id;
     protected String name;
     protected String phone;

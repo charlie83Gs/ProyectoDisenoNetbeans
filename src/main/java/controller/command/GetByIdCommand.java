@@ -13,14 +13,22 @@ import controller.Payload;
  * @author Charlie
  */
 public class GetByIdCommand<T> implements Command{
-
-    public GetByIdCommand(Payload payload) {
+    /**
+     * Requires a payload containing
+     * "id" id
+     * "class" Class @entity
+     * @return T
+     */
+    public GetByIdCommand(Payload payload) throws Exception {
         this.payload = payload;
+        if(!this.payload.contains("id")) throw new Exception("Invalid payload requires \"id\" of type Integer");
+        if(!this.payload.contains("class")) throw new Exception("Invalid payload requires \"class\" of type Class");
     }
     Payload payload;
     /**
-     * @see "id" id
-     * @see "class" Class @entity
+     * Requires a payload containing
+     * "id" id
+     * "class" Class @entity
      * @return T
      */
     @Override
