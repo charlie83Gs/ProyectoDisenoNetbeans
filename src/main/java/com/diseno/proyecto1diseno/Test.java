@@ -10,10 +10,12 @@ import com.diseno.proyecto1diseno.HibernateORM.PersistanceData;
 import com.diseno.proyecto1diseno.model.Client;
 import com.diseno.proyecto1diseno.model.Employee;
 import com.diseno.proyecto1diseno.model.Public;
+import com.diseno.proyecto1diseno.model.Role;
 import com.diseno.proyecto1diseno.model.Schedule;
 import com.diseno.proyecto1diseno.model.Service;
 import com.diseno.proyecto1diseno.model.ServiceBuilder;
 import com.diseno.proyecto1diseno.model.Study;
+import com.diseno.proyecto1diseno.model.Task;
 import controller.Payload;
 import controller.command.AddCommand;
 import controller.command.DeleteCommand;
@@ -79,6 +81,17 @@ public class Test {
     public static void testAddCommands(){
         
         try {
+            Task taskAdmin = new Task("Admin", "take care of the bussines");
+            Task taskAccounting = new Task("Accounting", "");
+            Task taskCare = new Task("Care","");
+            
+            //Role roleAdmin = new Role("Adimin", 0, task);
+            
+            
+            
+            
+            
+            
             Employee emp = new Employee("CharlieEmpCm","63387898","carlos@gmail.com", "1234");
             Payload empPayload = new Payload();
             empPayload.addContent("object", emp);
