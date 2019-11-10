@@ -6,13 +6,27 @@
 package com.diseno.proyecto1diseno.model;
 
 import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 /**
  *
  * @author Evelio
  */
 public class ServiceContract {
-
+    @Id
+    private int id;
+    @OneToOne
     private Service service;
+    @OneToOne
     private Employee employee;
     private Date dateStart;
     private Date dateEnd;
@@ -38,7 +52,7 @@ public class ServiceContract {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }
+    } 
 
     public Date getDateStart() {
         return dateStart;
@@ -55,4 +69,5 @@ public class ServiceContract {
     public void setDateEnd(Date dateEnd) {
         this.dateEnd = dateEnd;
     }
+
 }

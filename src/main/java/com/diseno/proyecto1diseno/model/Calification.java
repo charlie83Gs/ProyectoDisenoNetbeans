@@ -5,12 +5,21 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Charlie
  */
+
+@Entity
+@Table(name="califications")
 public class Calification {
     private int value;
+    @Id
+    private int id;
     private String comment;
     
 }

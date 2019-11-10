@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controller.command;
+
+import com.diseno.proyecto1diseno.HibernateORM.PersistanceData;
+import controller.Payload;
+
+/**
+ *
+ * @author Charlie
+ */
+public class AddCommand<T> implements Command{
+
+    public AddCommand(Payload payload) {
+        this.payload = payload;
+    }
+    Payload payload;
+    
+    /**
+     * @see "object" @entity
+     * @return 
+     */
+    @Override
+    public T execute() {
+        Object object = payload.getContent("object");
+        PersistanceData.insert(object);
+        return null;
+    }
+    
+    
+    
+}

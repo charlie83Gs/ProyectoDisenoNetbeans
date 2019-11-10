@@ -5,16 +5,35 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 /**
  *
  * @author Charlie
  */
+@Entity
+@Table(name="services")
 public class Service {
+    @Id
+    private int id;
     private String name;
+    @OneToOne(fetch = FetchType.LAZY)
     private Public targetPublic;
-    private Schedule[] schedules;
+    @OneToMany()
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Schedule> schedules = new ArrayList<Schedule>();
 
-    public Service(String name, Public targetPublic, Schedule[] schedules) {
+    public Service(String name, Public targetPublic,  List<Schedule> schedules) {
         this.name = name;
         this.targetPublic = targetPublic;
         this.schedules = schedules;

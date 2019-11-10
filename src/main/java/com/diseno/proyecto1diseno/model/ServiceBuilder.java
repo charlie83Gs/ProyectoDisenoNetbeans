@@ -33,8 +33,8 @@ public class ServiceBuilder {
     }
     
     public Service getResult(){
-        Schedule[] scheduleArray = (Schedule[])schedules.toArray();
-        return new Service(name,targetPublic,scheduleArray);
+        //Schedule[] scheduleArray = (Schedule[])schedules.toArray();
+        return new Service(name,targetPublic,schedules);
     }
     
     

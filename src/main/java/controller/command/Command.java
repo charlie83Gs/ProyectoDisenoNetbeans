@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.diseno.proyecto1diseno.model;
+package controller.command;
 
 /**
  *
  * @author Charlie
  */
-public enum RequestType {
-    ADD,
-    REMOVE,
-    GET_ALL,
-    GET_BY_ID,
-    COUNT
+public interface Command<T> {
+    public T execute();
 }
