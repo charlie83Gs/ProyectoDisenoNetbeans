@@ -29,6 +29,9 @@ public class Complain {
         this.name = name;
         this.description = description;
     }
+
+    public Complain() {
+    }
     
     public int getId() {
         return id;
