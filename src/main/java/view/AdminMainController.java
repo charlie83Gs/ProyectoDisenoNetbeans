@@ -126,8 +126,9 @@ public class AdminMainController implements Initializable {
         }
         catch (IOException e) {
             e.printStackTrace();
-        }
-    }
+}
+            }
+
     
     private void atrasAdminBtnPressed(ActionEvent event) {
                 System.out.println("You clicked me!");

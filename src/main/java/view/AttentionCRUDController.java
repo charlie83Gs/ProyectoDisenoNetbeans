@@ -152,6 +152,7 @@ public class AttentionCRUDController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         column_nombre.setCellValueFactory(new PropertyValueFactory<>("Name"));
         
         table_AttentionCRUD.setItems(centers());
