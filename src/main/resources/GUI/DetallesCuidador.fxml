@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DetallesCuidadorController">
+  <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="100.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="150.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btn_AtrasDetallesCuidador" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
+            <Label text="Cuidador" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Nombre:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Correo Electrónico:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Categoría:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Evaluación Promedio:" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Cantidad de contrataciones:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label text="Comentarios:" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="7" GridPane.rowIndex="12" GridPane.rowSpan="6">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Evaluación" />
+                <TableColumn minWidth="700.0" prefWidth="75.0" text="Comentario" />
+              </columns>
+            </TableView>
+            <Label fx:id="label_nombreCuidador" prefHeight="17.0" prefWidth="213.0" text="[inserte texto aqui]" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <Label fx:id="label_emailCuidador" prefHeight="17.0" prefWidth="213.0" text="[inserte texto aqui]" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+            <Label fx:id="label_categoriaCuidador" prefHeight="17.0" prefWidth="211.0" text="[inserte texto aqui]" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+            <Label fx:id="label_evaluacionCuidador" prefHeight="17.0" prefWidth="207.0" text="[inserte texto aqui]" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+            <Label fx:id="label_cantidadCuidador" prefHeight="17.0" prefWidth="215.0" text="[inserte texto aqui]" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+            <Label text="Disponible:" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+            <Label fx:id="label_DisponibleCuidador" text="[inserte si o no]" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="212.0" text="Solicitar Cuidador" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="19" />
+         </children>
+      </GridPane>
+  </children>
+</VBox>
