@@ -27,10 +27,15 @@ public class Public {
     public Public() {
     }
 
-    public Public(String name) {
+    public Public(String name, float cost, float payment) {
         this.name = name;
+        this.cost = cost;
+        this.payment = payment;
     }
     
+    
+
+   
     public String getName() {
         return name;
     }
@@ -42,5 +47,20 @@ public class Public {
     public float getCost() {
         return cost;
     }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+    
+    
+
+    public float getPayment() {
+        return payment;
+    }
+
+    public void setPayment(float payment) {
+        this.payment = payment;
+    }
+    
     
 }

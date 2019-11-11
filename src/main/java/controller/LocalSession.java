@@ -44,7 +44,7 @@ public class LocalSession {
         if (user != null) type = SessionType.CLIENT;
         user = PersistanceData.validateLoginEmp(name, password);
         if (user != null) type = SessionType.EMPLOYEE;
-        
+
         return user != null;
     }
     
