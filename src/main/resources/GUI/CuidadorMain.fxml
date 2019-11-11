@@ -54,12 +54,12 @@
          <children>
             <TableView fx:id="table_CuidadorMain" prefHeight="210.0" prefWidth="749.0" GridPane.columnIndex="2" GridPane.columnSpan="7" GridPane.rowIndex="6" GridPane.rowSpan="7">
                <columns>
-                  <TableColumn minWidth="600.0" prefWidth="75.0" text="Tarea" />
-                  <TableColumn minWidth="150.0" prefWidth="75.0" text="Completado" />
+                  <TableColumn fx:id="columTarea" minWidth="138.0" prefWidth="188.0" text="Tarea" />
+                  <TableColumn fx:id="columDescripcion" minWidth="150.0" prefWidth="562.0" text="Descripcion" />
                </columns>
             </TableView>
             <Label text="Tareas" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button fx:id="btn_AtrasCuidadorMain" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_AtrasCuidadorMain" mnemonicParsing="false" onAction="#onAtrasButton" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
          </children>
       </GridPane>
   </children>

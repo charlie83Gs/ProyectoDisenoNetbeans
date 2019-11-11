@@ -8,7 +8,7 @@
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">hiwo</property>
     <property name="hibernate.hbm2ddl.auto">create</property>
-    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.show_sql">false</property>
     <property name="hibernate.current_session_context_class">thread</property>
   </session-factory>
 </hibernate-configuration>
