@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EmpleadoCRUDController">
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ClienteCRUDController">
   <children>
       <GridPane>
         <columnConstraints>
@@ -51,26 +51,28 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView fx:id="table_EmpleadoCRUD" prefHeight="210.0" prefWidth="749.0" GridPane.columnIndex="2" GridPane.columnSpan="6" GridPane.rowIndex="4" GridPane.rowSpan="7">
+            <TableView fx:id="table_ClienteCRUD" prefHeight="210.0" prefWidth="749.0" GridPane.columnIndex="2" GridPane.columnSpan="6" GridPane.rowIndex="4" GridPane.rowSpan="7">
                <columns>
                   <TableColumn fx:id="column_id" minWidth="70.0" prefWidth="10.0" text="ID" />
-                  <TableColumn fx:id="column_nombre" minWidth="250.0" prefWidth="75.0" text="Nombre" />
+                  <TableColumn fx:id="column_nombre" minWidth="200.0" prefWidth="75.0" text="Nombre" />
                   <TableColumn fx:id="column_email" minWidth="250.0" prefWidth="75.0" text="Email" />
                   <TableColumn fx:id="column_telefono" minWidth="100.0" prefWidth="75.0" text="Teléfono" />
                </columns>
             </TableView>
-            <Label text="Empleado" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="btn_ActualizarEmpleadoCRUD" onAction="#handler_btn_ActualizarEmpleadoCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="244.0" text="Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
-            <Button fx:id="btn_AtrasEmpleadoCRUD" onAction="#handler_btn_AtrasEmpleadoCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
-            <Button fx:id="btn_EliminarEmpleadoCRUD" onAction="#handler_btn_EliminarEmpleadoCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="Eliminar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <Button fx:id="btn_VerEmpleadoCRUD" onAction="#handler_btn_VerEmpleadoCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <Button fx:id="btn_ModificarEmpleadoCRUD" onAction="#handler_btn_ModificarEmpleadoCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="239.0" text="Modificar" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Label text="Categorías" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="btn_CrearActualizarClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="244.0" text="Crear/Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
+            <Button fx:id="btn_AtrasClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_EliminarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="Elininar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_VerCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_ModificarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="239.0" text="Modificar" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <Label text="Nombre:" GridPane.columnIndex="2" GridPane.rowIndex="14" />
             <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="15" />
             <Label text="Teléfono:" GridPane.columnIndex="2" GridPane.rowIndex="16" />
-            <TextField fx:id="text_nombreEmpleadoCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="14" />
-            <TextField fx:id="text_emailEmpleadoCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="15" />
-            <TextField fx:id="text_telefonoEmpleadoCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="16" />
+            <Label text="Edad:" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+            <TextField fx:id="text_nombreClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+            <TextField fx:id="text_emailClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="15" />
+            <TextField fx:id="text_telefonoClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="16" />
+            <TextField fx:id="text_edadClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="17" />
          </children>
       </GridPane>
   </children>

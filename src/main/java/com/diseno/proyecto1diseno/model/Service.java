@@ -50,6 +50,7 @@ public class Service {
         return name;
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
@@ -69,8 +70,6 @@ public class Service {
     public void setSchedules(List<Schedule> schedules) {
         this.schedules = schedules;
     }
-    
-    
     
     
 }

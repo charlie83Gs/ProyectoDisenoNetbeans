@@ -13,7 +13,9 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Test.fullTest();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/ClienteMain.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/LoginScreen.fxml"));
+
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
