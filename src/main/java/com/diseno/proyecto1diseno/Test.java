@@ -21,6 +21,7 @@ import controller.Payload;
 import controller.command.AddCommand;
 import controller.command.DeleteCommand;
 import controller.command.FindCommand;
+import java.time.Instant;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -232,11 +233,30 @@ public class Test {
             builder.setName("Children Service v1");
             
             Payload addSservicePayload = new Payload();
-            addSservicePayload.addContent("object",builder.getResult());
+            Service service = builder.getResult();
+            addSservicePayload.addContent("object",service);
             
             
             AddCommand<Service> addService = new AddCommand<>(addSservicePayload);
             addService.execute();
+            
+            /**//*/************************/
+            
+            Employee emp = new Employee("CharlieEmp","63387898","carlos@gmail.com", "1234");
+            PersistanceData.<Employee>insert(emp);
+
+
+            
+            ServiceContract cont1 = new ServiceContract(service,emp,new Date(),new Date() );
+            
+            Payload pAddServiceContract = new Payload();
+            pAddServiceContract.addContent("object", cont1);
+            
+            AddCommand<ServiceContract> addServiceContract = new AddCommand<>(pAddServiceContract);
+            addServiceContract.execute();
+            
+            //public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd) {
+            //PersistanceData.<ServiceContract>insert(cont1);
             
         } catch (Exception ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
@@ -244,11 +264,7 @@ public class Test {
     }
     
      
+           
     
-        public static void testServiceContractCrud(){
-        //ServiceContract cont1 = new ServiceContract();
-        //    public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd) {
-
-    }
 
 }

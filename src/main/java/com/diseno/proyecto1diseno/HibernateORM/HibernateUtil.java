@@ -37,6 +37,8 @@ public class HibernateUtil {
                 .addAnnotatedClass(Public.class)
                 .addAnnotatedClass(Schedule.class)
                 .addAnnotatedClass(Service.class)
+                .addAnnotatedClass(ServiceContract.class)
+
                 ;
             
             sessionFactory = connection.buildSessionFactory();

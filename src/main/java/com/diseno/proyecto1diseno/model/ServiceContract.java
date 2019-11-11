@@ -21,6 +21,8 @@ import org.hibernate.annotations.LazyCollectionOption;
  *
  * @author Evelio
  */
+@Entity
+@Table(name="servicecontracts")
 public class ServiceContract {
     @Id
     private int id;
@@ -30,6 +32,11 @@ public class ServiceContract {
     private Employee employee;
     private Date dateStart;
     private Date dateEnd;
+
+    public ServiceContract() {
+    }
+    
+    
     
     public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd) {
         this.service = service;

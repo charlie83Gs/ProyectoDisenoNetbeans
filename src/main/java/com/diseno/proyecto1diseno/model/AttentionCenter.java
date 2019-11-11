@@ -11,4 +11,7 @@ package com.diseno.proyecto1diseno.model;
  */
 public class AttentionCenter {
     String name;
+    
+    public AttentionCenter() {
+    }
 }

@@ -109,6 +109,10 @@ public class AdminMainController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        //table_ReportesAdmin.set
+        
+        
     }    
     
 }

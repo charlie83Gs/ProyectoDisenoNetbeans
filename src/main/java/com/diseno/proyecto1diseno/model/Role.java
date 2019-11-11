@@ -32,6 +32,9 @@ public class Role {
         this.task = task;
     }
 
+    public Role() {
+    }
+
     public String getName() {
         return name;
     }
