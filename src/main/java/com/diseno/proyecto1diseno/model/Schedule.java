@@ -21,6 +21,8 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name="schedules")
+
+
 public class Schedule {
     @Id
     @GeneratedValue
@@ -38,6 +40,9 @@ public class Schedule {
     private boolean friday;
     private boolean saturday;
     private boolean sunday;
+
+    public Schedule() {
+    }
 
     public Schedule(Date startDate, Date endDate) {
         this.startDate = startDate;

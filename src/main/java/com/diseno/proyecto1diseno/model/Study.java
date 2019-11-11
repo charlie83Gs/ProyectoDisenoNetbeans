@@ -35,6 +35,9 @@ public class Study {
         return study;
     }
 
+    public Study() {
+    }
+
     public void setStudy(String study) {
         this.study = study;
     }
