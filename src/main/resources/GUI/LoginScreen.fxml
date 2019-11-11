@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginScreenController">
   <children>
       <GridPane>
         <columnConstraints>
@@ -46,8 +46,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="232.0" text="Registrarse" GridPane.columnIndex="2" GridPane.rowIndex="18" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+            <Button fx:id="btn_registrarse" mnemonicParsing="false" prefHeight="25.0" prefWidth="232.0" text="Registrarse" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+            <Button fx:id="btn_inicioSesion" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="18" />
             <SplitMenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="255.0" text="SplitMenuButton" GridPane.columnIndex="2" GridPane.rowIndex="16">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />

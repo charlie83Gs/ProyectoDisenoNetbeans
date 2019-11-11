@@ -78,6 +78,8 @@ public class AdminMainController implements Initializable {
     private TableColumn<ServiceContract, Date> column_fecha;
     @FXML
     private TableColumn<ServiceContract, AttentionCenter> column_centro;
+    @FXML
+    private TableColumn<ServiceContract, Float> column_monto;
 
     
     @FXML
@@ -99,6 +101,7 @@ public class AdminMainController implements Initializable {
         
     
     }
+}
     }
     
     @FXML
@@ -133,6 +136,7 @@ public class AdminMainController implements Initializable {
         column_cliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
         column_fecha.setCellValueFactory(new PropertyValueFactory<>("dateStart"));
         column_centro.setCellValueFactory(new PropertyValueFactory<>("attentionCenter"));
+        column_monto.setCellValueFactory(new PropertyValueFactory<>("cost"));
         
         ObservableList<ServiceContract> observable = FXCollections.observableArrayList(services);
         

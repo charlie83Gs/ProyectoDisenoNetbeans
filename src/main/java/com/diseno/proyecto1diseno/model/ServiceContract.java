@@ -30,17 +30,20 @@ public class ServiceContract {
     private Client cliente;
     @OneToOne
     private AttentionCenter attentionCenter;
+    private float cost;
 
     public ServiceContract() {
     }
     
     
     
-    public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd) {
+    public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd, AttentionCenter attentionCenter,float cost ) {
         this.service = service;
         this.employee = employee;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
+        this.attentionCenter = attentionCenter;
+        this.cost = cost;
     }
 
     public Service getService() {
@@ -81,6 +84,38 @@ public class ServiceContract {
             totalCost += study.getPayment();
         }
         return totalCost;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Client getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Client cliente) {
+        this.cliente = cliente;
+    }
+
+    public AttentionCenter getAttentionCenter() {
+        return attentionCenter;
+    }
+
+    public void setAttentionCenter(AttentionCenter attentionCenter) {
+        this.attentionCenter = attentionCenter;
+    }
+
+    public float getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
     }
 
 }
