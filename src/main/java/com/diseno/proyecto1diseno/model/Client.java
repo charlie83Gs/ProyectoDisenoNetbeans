@@ -75,7 +75,7 @@ public class Client extends User{
 
     @Override
     public String toString() {
-        return "Client{" + name + '}';
+        return  name ;
     }
     
 }

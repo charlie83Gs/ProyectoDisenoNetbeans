@@ -35,6 +35,7 @@ public class Employee extends User{
     @OneToMany()
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Calification> califications = new ArrayList<>();
+    
     @OneToMany()
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Study> studies = new ArrayList<>();
@@ -99,6 +100,11 @@ public class Employee extends User{
 
     public void setAttentionCenter(AttentionCenter attentionCenter) {
         this.attentionCenter = attentionCenter;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
     
     

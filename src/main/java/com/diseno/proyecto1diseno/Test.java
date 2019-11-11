@@ -270,7 +270,7 @@ public class Test {
             
             //-*//*/************************/
             
-            Employee emp = new Employee("CharlieEmp","63387898","carlos@gmail.com", "1234");
+            Employee emp = new Employee("CharlieEmpSrv","63387898","carlos@gmail.com", "1234");
             PersistanceData.<Employee>insert(emp);
 
             AttentionCenter attcent = new AttentionCenter();
@@ -279,7 +279,7 @@ public class Test {
             AddCommand<AttentionCenter> addAttentionCenter = new AddCommand<>(pAddAttentionCenter);
             addAttentionCenter.execute();
             
-            ServiceContract cont1 = new ServiceContract(service,emp,new Date(),new Date(),attcent,4500 );
+            ServiceContract cont1 = new ServiceContract(service,emp,null,new Date(),new Date(),attcent,4500 );
             Payload pAddServiceContract = new Payload();
             pAddServiceContract.addContent("object", cont1);
             
@@ -400,7 +400,7 @@ public class Test {
             
             addEmpCommand.execute();
             addEmp2Command.execute();
-            addEmp3Command.execute();
+            //addEmp3Command.execute();
             
         } catch (Exception ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);

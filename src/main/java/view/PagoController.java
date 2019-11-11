@@ -123,17 +123,17 @@ public class PagoController implements Initializable {
         if(serv.getTargetPublic() != null){
             Public pub = serv.getTargetPublic();
             //System.out.println(pub.getName());
-            //cost += pub.getCost();
+            cost += pub.getCost();
         }
-        ArrayList<Study> studies = new ArrayList<>();
+        ArrayList<Study> studies = new ArrayList<>(emp.getStudies());
         
-        for (Study study : emp.getStudies()) {
+        for (Study study : studies) {
             cost += study.getCost();
         }
         
         
         
-        ServiceContract contract = new ServiceContract(serv,emp,currentDate,endDate,emp.getAttentionCenter(),cost);
+        ServiceContract contract = new ServiceContract(serv,emp,clt,currentDate,endDate,emp.getAttentionCenter(),cost);
         Payload payload = new Payload();
         payload.addContent("object", contract);
         try {

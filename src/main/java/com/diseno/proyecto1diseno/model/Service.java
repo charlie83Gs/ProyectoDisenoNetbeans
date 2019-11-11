@@ -29,7 +29,7 @@ public class Service {
     @GeneratedValue
     private int id;
     private String name;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     private Public targetPublic;
     @OneToMany()
     @LazyCollection(LazyCollectionOption.FALSE)

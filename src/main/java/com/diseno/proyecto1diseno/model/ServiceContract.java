@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 import javax.persistence.OneToOne;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -22,15 +23,15 @@ public class ServiceContract {
     @Id
     @GeneratedValue
     private int id;
-    @OneToOne
+    @ManyToOne
     private Service service;
-    @OneToOne
+    @ManyToOne
     private Employee employee;
     private Date dateStart;
     private Date dateEnd;
-    @OneToOne
+    @ManyToOne
     private Client cliente;
-    @OneToOne
+    @ManyToOne
     private AttentionCenter attentionCenter;
     private float cost;
 
@@ -39,13 +40,14 @@ public class ServiceContract {
     
     
     
-    public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd, AttentionCenter attentionCenter,float cost ) {
+    public ServiceContract(Service service, Employee employee, Client cliente, Date dateStart, Date dateEnd, AttentionCenter attentionCenter,float cost ) {
         this.service = service;
         this.employee = employee;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.attentionCenter = attentionCenter;
         this.cost = cost;
+        this.cliente = cliente;
     }
 
     public Service getService() {
