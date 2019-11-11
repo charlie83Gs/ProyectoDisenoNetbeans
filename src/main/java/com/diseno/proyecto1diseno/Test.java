@@ -7,7 +7,11 @@ package com.diseno.proyecto1diseno;
 
 import com.diseno.proyecto1diseno.HibernateORM.HibernateUtil;
 import com.diseno.proyecto1diseno.HibernateORM.PersistanceData;
+
+import com.diseno.proyecto1diseno.model.Calification;
+
 import com.diseno.proyecto1diseno.model.AttentionCenter;
+
 import com.diseno.proyecto1diseno.model.Client;
 import com.diseno.proyecto1diseno.model.Employee;
 import com.diseno.proyecto1diseno.model.Public;
@@ -18,10 +22,12 @@ import com.diseno.proyecto1diseno.model.ServiceBuilder;
 import com.diseno.proyecto1diseno.model.ServiceContract;
 import com.diseno.proyecto1diseno.model.Study;
 import com.diseno.proyecto1diseno.model.Task;
+import controller.LocalSession;
 import controller.Payload;
 import controller.command.AddCommand;
 import controller.command.DeleteCommand;
 import controller.command.FindCommand;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import java.time.Instant;
@@ -29,6 +35,14 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
@@ -44,6 +58,8 @@ public class Test {
         testAddCommands();
         testDeleteCommand();
         testAddService();
+        testRoles();
+        teststudys();
     }
     
 
@@ -129,6 +145,8 @@ public class Test {
             emp.addRole(roleAdmin);
             Payload empPayload = new Payload();
             empPayload.addContent("object", emp);
+            
+            LocalSession.getInstance().addData("employee", emp);
             
             Client cli = new Client("CharlieCliCm","63387898","carlos@gmail.com", "1234");
             Payload cliPayload = new Payload();
@@ -273,5 +291,122 @@ public class Test {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
+    public static void testRoles(){
+        try {
+            Task taskAdmin = new Task("Take care", "Supply basic needs");
+            Task taskAccounting = new Task("Prepare food", "cook food for client");
+            Task taskGovernance = new Task("Shower","shower the client");
+            
+            ArrayList<Task> tasks = new ArrayList<>();
+            tasks.add(taskAdmin);
+            tasks.add(taskAccounting);
+            tasks.add(taskGovernance);
+            
+            
+            //add admin
+            Payload addAdminPayload = new Payload();
+            Payload addAccountingPayload = new Payload();
+            Payload addGovernancePayload = new Payload();
+            
+            addAdminPayload.addContent("object", taskAdmin);
+            addAccountingPayload.addContent("object", taskAccounting);
+            addGovernancePayload.addContent("object", taskGovernance);
+            
+            AddCommand<Task> addAdminTask = new AddCommand<>(addAdminPayload);
+            AddCommand<Task> addAccountingTask = new AddCommand<>(addAccountingPayload);
+            AddCommand<Task> addGovernanceTask = new AddCommand<>(addGovernancePayload);
+            
+            addAccountingTask.execute();
+            addAdminTask.execute();
+            addGovernanceTask.execute();
+            
+            Role roleAdmin = new Role("Cuidador",150, tasks);
+            Payload addRolePayload = new Payload();
+            addRolePayload.addContent("object", roleAdmin);
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public static void teststudys(){
+        try {
+            Study eldercare = new Study("Elder care", 300, 120);
+            Study childrencare = new Study("Children care", 200, 80);
+            Study babycare = new Study("Baby care", 280, 95);
+            
+            Payload elderPayload = new Payload();
+            Payload childrenPayload = new Payload();
+            Payload babyPayload = new Payload();
+            
+            elderPayload.addContent("object", eldercare);
+            childrenPayload.addContent("object", childrencare);
+            babyPayload.addContent("object", babycare);
+            
+            AddCommand<Study> addElder = new AddCommand<>(elderPayload);
+            AddCommand<Study> addChildren = new AddCommand<>(childrenPayload);
+            AddCommand<Study> addBaby = new AddCommand<>(babyPayload);
+            
+            addElder.execute();
+            addChildren.execute();
+            addBaby.execute();
+            
+            //califications
+            Calification calf1 = new Calification(3,"decent work");
+            Calification calf2 = new Calification(4,"good work");
+            Calification calf3 = new Calification(5,"excelent work");
+            Payload calf1Payload = new Payload();
+            Payload calf2Payload = new Payload();
+            Payload calf3Payload = new Payload();
+            calf1Payload.addContent("object", calf1);
+            calf2Payload.addContent("object", calf2);
+            calf3Payload.addContent("object", calf3);
+            AddCommand<Calification> calf1Command = new AddCommand<>(calf1Payload);
+            AddCommand<Calification> calf2Command = new AddCommand<>(calf2Payload);
+            AddCommand<Calification> calf3Command = new AddCommand<>(calf3Payload);
+            calf1Command.execute();
+            calf2Command.execute();
+            calf3Command.execute();
+            
+            
+            Employee empElder = new Employee("ElderEmp","63387898","carlos@gmail.com", "1234");
+            Employee empchildren = new Employee("ChildrenEmp","63387898","carlos@gmail.com", "1234");
+            Employee empBaby = new Employee("BabyEmp","63387898","carlos@gmail.com", "1234");
+            
+            empElder.addStudy(eldercare);
+            empchildren.addStudy(childrencare);
+            empBaby.addStudy(babycare);
+            empElder.addStudy(babycare);
+            
+            empElder.addCalification(calf3);
+            empElder.addCalification(calf2);
+            empBaby.addCalification(calf1);
+            
+            Payload empPayload = new Payload();
+            empPayload.addContent("object", empElder);
+            Payload emp2Payload = new Payload();
+            emp2Payload.addContent("object", empchildren);
+            Payload emp3Payload = new Payload();
+            emp3Payload.addContent("object", empBaby);
+            
+            AddCommand<Employee> addEmpCommand= new AddCommand<>(empPayload);
+            AddCommand<Employee> addEmp2Command= new AddCommand<>(emp2Payload);
+            AddCommand<Employee> addEmp3Command= new AddCommand<>(emp3Payload);
+            
+            addEmpCommand.execute();
+            addEmp2Command.execute();
+            addEmp3Command.execute();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+
+    
 
 }
