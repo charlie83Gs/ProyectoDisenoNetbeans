@@ -5,6 +5,10 @@
  */
 package view;
 
+import com.diseno.proyecto1diseno.model.AttentionCenter;
+import com.diseno.proyecto1diseno.model.Client;
+import controller.Payload;
+import controller.command.AddCommand;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -29,8 +33,6 @@ public class RegistroController implements Initializable {
     @FXML
     private TextField text_TelefonoRegistro;
     @FXML
-    private TextField text_EdadRegistro;
-    @FXML
     private PasswordField text_PasswordRegistro;
     @FXML
     private TextArea text_tratadoRegistro;
@@ -46,10 +48,32 @@ public class RegistroController implements Initializable {
     private Button btn_AtrasRegistro;
 
     @FXML
-    private void handler_btn_RegistratseRegistro(ActionEvent event) {
+    private void handler_btn_RegistratseRegistro(ActionEvent event) throws Exception {
         System.out.println("You clicked me!");
+        Client cliente;
+        System.out.println(text_tratadoRegistro.getText());
+        System.out.println(text_carcelRegistro.getText());
+        System.out.println(text_pagarRegistro.getText());
+        System.out.println(text_solosola.getText());
+        if(     ((text_tratadoRegistro.getText() == "" || text_carcelRegistro.getText() == "") || text_pagarRegistro.getText() == "") ||
+                text_solosola.getText() == "") {
+                cliente = new Client(
+                text_nombreRegistro.getText(),
+                text_TelefonoRegistro.getText(),
+                text_CorreoRegistro.getText(),
+                text_PasswordRegistro.getText()
+                );
+                Payload pAddCliente = new Payload();
+                pAddCliente.addContent("object", cliente);
+                AddCommand<AttentionCenter> addCliente = new AddCommand<>(pAddCliente);
+                addCliente.execute();
+                
+                System.out.println("Cliente agregado");
+            
+        } 
+                
+        
     }
-    
     @FXML
     private void handler_btn_AtrasRegistro(ActionEvent event) {
         System.out.println("You clicked me!");
