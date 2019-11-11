@@ -21,6 +21,7 @@ import controller.Payload;
 import controller.command.AddCommand;
 import controller.command.DeleteCommand;
 import controller.command.FindCommand;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,12 +85,16 @@ public class Test {
     public static void testAddCommands(){
         
         try {
-            /*Task taskAdmin = new Task("Admin", "take care of the bussines");
+            Task taskAdmin = new Task("Admin", "take care of the bussines");
             Task taskAccounting = new Task("Accounting", "");
             Task taskGovernance = new Task("Governance","");
             
-            Task[] tasks = {taskAdmin, taskAccounting, taskGovernance};
-                    
+            ArrayList<Task> tasks = new ArrayList<>();
+            tasks.add(taskAdmin);
+            tasks.add(taskAccounting);
+            tasks.add(taskGovernance);
+            
+            
             //add admin
             Payload addAdminPayload = new Payload();
             Payload addAccountingPayload = new Payload();
@@ -97,7 +102,7 @@ public class Test {
             
             addAdminPayload.addContent("object", taskAdmin);
             addAccountingPayload.addContent("object", taskAccounting);
-            addGovernancePayload.addContent("object", taskAccounting);
+            addGovernancePayload.addContent("object", taskGovernance);
             
             AddCommand<Task> addAdminTask = new AddCommand<>(addAdminPayload);
             AddCommand<Task> addAccountingTask = new AddCommand<>(addAccountingPayload);
@@ -114,10 +119,10 @@ public class Test {
             AddCommand<Role> addRole = new AddCommand<>(addRolePayload);
             
             addRole.execute();
-            */
+            
 
             Employee emp = new Employee("CharlieEmpCm","63387898","carlos@gmail.com", "1234");
-            //emp.addRole(roleAdmin);
+            emp.addRole(roleAdmin);
             Payload empPayload = new Payload();
             empPayload.addContent("object", emp);
             
