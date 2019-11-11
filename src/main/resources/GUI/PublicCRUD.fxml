@@ -9,17 +9,17 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RegistroController">
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PublicCRUDController">
   <children>
       <GridPane>
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="100.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="150.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="150.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="150.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -51,25 +51,26 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Registro" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label text="Nombre" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <TextField fx:id="text_nombreRegistro" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-            <Label text="Correo" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <TextField fx:id="text_CorreoRegistro" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="8" />
-            <Label text="Teléfono" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <TextField fx:id="text_TelefonoRegistro" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="10" />
-            <Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-            <PasswordField fx:id="text_PasswordRegistro" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="12" />
-            <Label text="¿Está siendo actualmente tratado?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-            <TextArea fx:id="text_tratadoRegistro" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-            <Label text="¿Ha estado en la cárcel antes?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="7" />
-            <TextArea fx:id="text_carcelRegistro" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="8" />
-            <Label text="¿Puede pagar nuestros servicios?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="9" />
-            <TextArea fx:id="text_pagarRegistro" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="10" />
-            <Label text="¿Vive sola o solo?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <TextArea fx:id="text_solosola" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="12" />
-            <Button fx:id="btn_RegistratseRegistro" mnemonicParsing="false" onAction="#handler_btn_RegistratseRegistro" prefHeight="25.0" prefWidth="225.0" text="Registrarse" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="14" />
-            <Button fx:id="btn_AtrasRegistro" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
+            <TableView fx:id="table_AttentionCRUD" prefHeight="210.0" prefWidth="749.0" GridPane.columnIndex="2" GridPane.columnSpan="6" GridPane.rowIndex="4" GridPane.rowSpan="7">
+               <columns>
+                  <TableColumn fx:id="column_id" minWidth="70.0" prefWidth="10.0" text="ID" />
+                  <TableColumn fx:id="column_nombre" minWidth="200.0" prefWidth="75.0" text="Nombre" />
+                  <TableColumn fx:id="column_cost" minWidth="200.0" prefWidth="75.0" text="Costo" />
+                  <TableColumn fx:id="column_payment" minWidth="200.0" prefWidth="75.0" text="Pago" />
+               </columns>
+            </TableView>
+            <Label text="Categoria" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="btn_CrearActualizarCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_CrearActualizarCategoriaCRUD" prefHeight="25.0" prefWidth="244.0" text="Crear/Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
+            <Button fx:id="btn_AtrasCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_AtrasCategoriaCRUD" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_EliminarCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_EliminarCategoriaCRUD" prefHeight="25.0" prefWidth="234.0" text="Elininar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_VerCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_VerCategoriaCRUD" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_ModificarCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_ModificarCategoriaCRUD" prefHeight="25.0" prefWidth="239.0" text="Modificar" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Label text="Nombre:" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+            <TextField fx:id="text_nombreCategoriaCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+            <TextField fx:id="text_costCategoriaCRUD" prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="15" />
+            <TextField fx:id="text_paymentCategoriaCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="16" />
+            <Label text="Costo:" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+            <Label text="Pago:" GridPane.columnIndex="2" GridPane.rowIndex="16" />
          </children>
       </GridPane>
   </children>

@@ -35,6 +35,7 @@ public class LoginScreenController implements Initializable {
     @FXML
     private ComboBox<String> combo_tipousuario;
 
+    @FXML
     private void handler_btn_AtrasLogin(ActionEvent event) {
         System.out.println("You clicked me!");
     }

@@ -122,7 +122,7 @@ public class AdminMainController implements Initializable {
             e.printStackTrace();
 }
             }
-    
+    @FXML
     private void atrasAdminBtnPressed(ActionEvent event) {
                 System.out.println("You clicked me!");
         
