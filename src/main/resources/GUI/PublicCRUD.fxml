@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AttentionCRUDController">
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PublicCRUDController">
   <children>
       <GridPane>
         <columnConstraints>
@@ -55,16 +55,22 @@
                <columns>
                   <TableColumn fx:id="column_id" minWidth="70.0" prefWidth="10.0" text="ID" />
                   <TableColumn fx:id="column_nombre" minWidth="200.0" prefWidth="75.0" text="Nombre" />
+                  <TableColumn fx:id="column_cost" minWidth="200.0" prefWidth="75.0" text="Costo" />
+                  <TableColumn fx:id="column_payment" minWidth="200.0" prefWidth="75.0" text="Pago" />
                </columns>
             </TableView>
-            <Label text="Centro" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="btn_CrearActualizarAttentionCRUD" mnemonicParsing="false" onAction="#handlebtn_CrearActualizarAttentionCRUD" prefHeight="25.0" prefWidth="244.0" text="Crear/Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
-            <Button fx:id="btn_AtrasAttentionCRUD" mnemonicParsing="false" onAction="#handlebtn_AtrasAttentionCRUD" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
-            <Button fx:id="btn_EliminarAttentionCRUD" mnemonicParsing="false" onAction="#handlebtn_EliminarAttentionCRUD" prefHeight="25.0" prefWidth="234.0" text="Elininar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <Button fx:id="btn_VerAttentionCRUD" mnemonicParsing="false" onAction="#handlebtn_VerAttentionCRUD" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <Button fx:id="btn_ModificarAttentionCRUD" mnemonicParsing="false" onAction="#handlebtn_ModificarAttentionCRUD" prefHeight="25.0" prefWidth="239.0" text="Modificar" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Label text="Categoria" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="btn_CrearActualizarCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_CrearActualizarCategoriaCRUD" prefHeight="25.0" prefWidth="244.0" text="Crear/Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
+            <Button fx:id="btn_AtrasCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_AtrasCategoriaCRUD" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_EliminarCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_EliminarCategoriaCRUD" prefHeight="25.0" prefWidth="234.0" text="Elininar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_VerCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_VerCategoriaCRUD" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_ModificarCategoriaCRUD" mnemonicParsing="false" onAction="#handlebtn_ModificarCategoriaCRUD" prefHeight="25.0" prefWidth="239.0" text="Modificar" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <Label text="Nombre:" GridPane.columnIndex="2" GridPane.rowIndex="14" />
-            <TextField fx:id="text_nombreAttentionCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+            <TextField fx:id="text_nombreCategoriaCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+            <TextField fx:id="text_costCategoriaCRUD" prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="15" />
+            <TextField fx:id="text_paymentCategoriaCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="16" />
+            <Label text="Costo:" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+            <Label text="Pago:" GridPane.columnIndex="2" GridPane.rowIndex="16" />
          </children>
       </GridPane>
   </children>
