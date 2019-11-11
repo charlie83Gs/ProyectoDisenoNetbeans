@@ -21,8 +21,8 @@ public class Public {
     @GeneratedValue
     private int id;
     String name;
-    float cost;
-    float payment;
+    private float cost;
+    private float payment;
 
     public Public() {
     }
@@ -42,5 +42,23 @@ public class Public {
     public float getCost() {
         return cost;
     }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    public void setPayment(float payment) {
+        this.payment = payment;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public float getPayment() {
+        return payment;
+    }
+    
+    
     
 }
