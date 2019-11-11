@@ -45,6 +45,32 @@ public class Service {
         this.targetPublic = targetPublic;
         this.schedules = schedules;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Public getTargetPublic() {
+        return targetPublic;
+    }
+
+    public void setTargetPublic(Public targetPublic) {
+        this.targetPublic = targetPublic;
+    }
+
+    public List<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
+    }
+    
+    
     
     
 }

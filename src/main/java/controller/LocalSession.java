@@ -53,4 +53,8 @@ public class LocalSession {
     public Object getData(String key){
         return sesionData.get(key);
     }
+    
+    public boolean contains(String key){
+        return sesionData.containsKey(key);
+    }
 }

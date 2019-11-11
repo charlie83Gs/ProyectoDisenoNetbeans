@@ -60,7 +60,7 @@
                </columns>
             </TableView>
             <Label text="Cuidador" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button fx:id="btn_AtrasCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_AtrasCliente" mnemonicParsing="false" onAction="#onAtrasButton" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
             <Label text="Categoría" GridPane.columnIndex="8" GridPane.rowIndex="4" />
             <ComboBox fx:id="combo_CategoriaCliente" onAction="#onCategoryHandle" prefWidth="150.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
             <Label text="Puedes cliquear en el cuidador para ver sus comentarios y hacer la solicitud del servicio." GridPane.columnIndex="2" GridPane.columnSpan="6" GridPane.rowIndex="19" />

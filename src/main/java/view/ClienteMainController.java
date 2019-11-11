@@ -9,6 +9,7 @@ import com.diseno.proyecto1diseno.model.Client;
 import com.diseno.proyecto1diseno.model.Employee;
 import com.diseno.proyecto1diseno.model.Study;
 import com.diseno.proyecto1diseno.model.Task;
+import controller.LocalSession;
 import controller.Payload;
 import controller.command.GetAllCommand;
 import java.io.IOException;
@@ -29,10 +30,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
+import org.hibernate.Session;
 
 /**
  * FXML Controller class
@@ -65,6 +69,23 @@ public class ClienteMainController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        tableCuidador.setRowFactory(tv -> {
+        TableRow<Employee> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (! row.isEmpty() && event.getButton()== MouseButton.PRIMARY 
+                     && event.getClickCount() == 2) {
+
+                    Employee clickedRow = row.getItem();
+                    System.out.println("selected employee" + clickedRow.getName());
+                    LocalSession.getInstance().addData("employee", clickedRow);
+                    goToDetallescuidador();
+                    //printRow(clickedRow);
+                    
+                }
+            });
+            return row ;
+        });
+
         try {
             // TODO
             columNombre.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -120,7 +141,7 @@ public class ClienteMainController implements Initializable {
         tableCuidador.getItems().setAll(oListEmployee);
     }
     
-     @FXML
+   @FXML
     void onAtrasButton(ActionEvent event) {
         System.out.println("You clicked me!");
         
@@ -141,6 +162,27 @@ public class ClienteMainController implements Initializable {
         }
     }
     
+    public void goToDetallescuidador(){
+    Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/GUI/DetallesCuidador.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+            
+            // Hide this current window (if this is what you want)
+            
+            btn_AtrasCliente.getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        
+    
+        }
+    }
+            
+    @FXML
     public void onCategoryHandle(ActionEvent event){
         try {
             System.out.println("Category: " + combo_CategoriaCliente.getValue().getStudy());
@@ -177,5 +219,6 @@ public class ClienteMainController implements Initializable {
         }
         
     }
+    
     
 }
