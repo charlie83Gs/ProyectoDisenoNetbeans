@@ -99,6 +99,9 @@ public class AdminMainController implements Initializable {
         catch (IOException e) {
             e.printStackTrace();
 }
+        
+    
+    
     }
     
     @FXML
@@ -139,8 +142,6 @@ public class AdminMainController implements Initializable {
         
         table_ReportesAdmin.getItems().setAll(observable);
         //table_ReportesAdmin.set
-        
-        
 
     }    
     

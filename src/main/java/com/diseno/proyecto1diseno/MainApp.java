@@ -13,7 +13,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Test.fullTest();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/AdminMain.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/ClientCRUD.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
