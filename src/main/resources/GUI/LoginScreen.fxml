@@ -50,9 +50,9 @@
             <Button fx:id="btn_inicioSesion" mnemonicParsing="false" onAction="#handler_btn_inicioSesion" prefHeight="25.0" prefWidth="246.0" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="18" />
             <Label text="Tipo de Usuario" GridPane.columnIndex="1" GridPane.rowIndex="16" />
             <Label text="Contraseña" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-            <PasswordField GridPane.columnIndex="2" GridPane.rowIndex="15" />
-            <Label text="Correo Electrónico" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="14" />
+            <PasswordField fx:id="textfieldPassword" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+            <Label text="Usuario" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <TextField fx:id="textfieldUsuario" GridPane.columnIndex="2" GridPane.rowIndex="14" />
             <Button fx:id="btn_AtrasLogin" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" text="Atrás" />
             <ComboBox fx:id="combo_tipousuario" prefHeight="25.0" prefWidth="253.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
          </children>
