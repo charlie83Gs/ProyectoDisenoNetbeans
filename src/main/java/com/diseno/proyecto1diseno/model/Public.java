@@ -21,6 +21,8 @@ public class Public {
     @GeneratedValue
     private int id;
     String name;
+    float cost;
+    float payment;
 
     public Public(String name) {
         this.name = name;

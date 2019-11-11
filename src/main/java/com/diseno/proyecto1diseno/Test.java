@@ -81,18 +81,40 @@ public class Test {
     public static void testAddCommands(){
         
         try {
-            Task taskAdmin = new Task("Admin", "take care of the bussines");
+            /*Task taskAdmin = new Task("Admin", "take care of the bussines");
             Task taskAccounting = new Task("Accounting", "");
-            Task taskCare = new Task("Care","");
+            Task taskGovernance = new Task("Governance","");
             
-            //Role roleAdmin = new Role("Adimin", 0, task);
+            Task[] tasks = {taskAdmin, taskAccounting, taskGovernance};
+                    
+            //add admin
+            Payload addAdminPayload = new Payload();
+            Payload addAccountingPayload = new Payload();
+            Payload addGovernancePayload = new Payload();
             
+            addAdminPayload.addContent("object", taskAdmin);
+            addAccountingPayload.addContent("object", taskAccounting);
+            addGovernancePayload.addContent("object", taskAccounting);
             
+            AddCommand<Task> addAdminTask = new AddCommand<>(addAdminPayload);
+            AddCommand<Task> addAccountingTask = new AddCommand<>(addAccountingPayload);
+            AddCommand<Task> addGovernanceTask = new AddCommand<>(addGovernancePayload);
             
+            addAccountingTask.execute();
+            addAdminTask.execute();
+            addGovernanceTask.execute();
             
+            Role roleAdmin = new Role("Adimin",200, tasks);
+            Payload addRolePayload = new Payload();
+            addRolePayload.addContent("object", roleAdmin);
             
+            AddCommand<Role> addRole = new AddCommand<>(addRolePayload);
             
+            addRole.execute();
+            */
+
             Employee emp = new Employee("CharlieEmpCm","63387898","carlos@gmail.com", "1234");
+            //emp.addRole(roleAdmin);
             Payload empPayload = new Payload();
             empPayload.addContent("object", emp);
             
@@ -189,7 +211,7 @@ public class Test {
             addBabyCommand.execute();
             addElderCommand.execute();
             
-
+            
             Schedule schedule = new Schedule(new Date(), new Date());
             schedule.setMonday(true);
             schedule.setFriday(true);
