@@ -48,8 +48,11 @@ public class PersistanceData {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
             Transaction trans = session.beginTransaction();
-
-            ArrayList<T> object = (ArrayList<T>)session.createCriteria(clazz).list();
+            Criteria criteria = session.createCriteria(clazz);
+            ArrayList<T> object = new ArrayList<>();
+            
+            if(!criteria.list().isEmpty())
+            object = (ArrayList<T>)criteria.list();
             
             trans.commit();
             return object;

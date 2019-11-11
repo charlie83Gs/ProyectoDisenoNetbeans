@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PagoController">
+  <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="100.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Detaller de pago" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Nombre" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="text_numeroTarjetaPago" prefHeight="25.0" prefWidth="209.0" promptText="Numero de Tarjeta" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+            <TextField fx:id="text_nombrePersonaPago" prefHeight="25.0" prefWidth="195.0" promptText="Nombre Persona" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+            <Label text="Dirección" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <TextField fx:id="text_Direccion1Pago" prefHeight="25.0" prefWidth="195.0" promptText="Dirección Linea 1" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <TextField fx:id="text_Direccion2Pago" prefHeight="25.0" prefWidth="195.0" promptText="Dirección Linea 2" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="12" />
+            <PasswordField fx:id="text_CiudadPago" promptText="Ciudad" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+            <Label text="Información de Contacto" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <TextArea fx:id="text_EmailPago" prefHeight="200.0" prefWidth="200.0" promptText="Email Address" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+            <TextArea fx:id="text_telefonoPago" prefHeight="200.0" prefWidth="200.0" promptText="Telefono" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+            <TextArea fx:id="text_EstadoPago" prefHeight="200.0" prefWidth="200.0" promptText="Estado" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <TextArea fx:id="text_CodigoPostal" prefHeight="200.0" prefWidth="200.0" promptText="Código Postal" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="12" />
+            <Button fx:id="btn_PagoPago" mnemonicParsing="false" prefHeight="25.0" prefWidth="225.0" text="Pago" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="15" />
+            <Button fx:id="btn_AtrasPago" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
+            <TextField fx:id="text_MMYY" promptText="MM/YY" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <TextField fx:id="text_CVC" promptText="CVC" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <TextField fx:id="text_PaisPago" promptText="País" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+         </children>
+      </GridPane>
+  </children>
+</VBox>

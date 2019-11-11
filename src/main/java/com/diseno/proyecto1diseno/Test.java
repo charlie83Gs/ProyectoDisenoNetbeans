@@ -13,6 +13,7 @@ import com.diseno.proyecto1diseno.model.Public;
 import com.diseno.proyecto1diseno.model.Schedule;
 import com.diseno.proyecto1diseno.model.Service;
 import com.diseno.proyecto1diseno.model.ServiceBuilder;
+import com.diseno.proyecto1diseno.model.ServiceContract;
 import com.diseno.proyecto1diseno.model.Study;
 import controller.Payload;
 import controller.command.AddCommand;
@@ -31,6 +32,8 @@ public class Test {
         testEmployeeCrud();
         testAddCommands();
     }
+    
+
     
     public static void testEmployeeCrud(){
         HibernateUtil.getSessionFactory().getCurrentSession();
@@ -108,4 +111,10 @@ public class Test {
         addStdCommand.execute();
         
      }
+    
+        public static void testServiceContractCrud(){
+        //ServiceContract cont1 = new ServiceContract();
+        //    public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd) {
+
+    }
 }
