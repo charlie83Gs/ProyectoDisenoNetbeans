@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -38,6 +39,9 @@ public class Employee extends User{
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Study> studies = new ArrayList<>();
     
+    
+    @OneToOne
+    private AttentionCenter attentionCenter;
     
     private Employee(){
         
@@ -88,5 +92,15 @@ public class Employee extends User{
     public void addStudy(Study study){
         studies.add(study);
     }
+
+    public AttentionCenter getAttentionCenter() {
+        return attentionCenter;
+    }
+
+    public void setAttentionCenter(AttentionCenter attentionCenter) {
+        this.attentionCenter = attentionCenter;
+    }
+    
+    
 
 }
