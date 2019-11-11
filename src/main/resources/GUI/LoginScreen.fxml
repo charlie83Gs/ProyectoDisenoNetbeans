@@ -57,6 +57,5 @@
             <ComboBox fx:id="combo_tipousuario" prefHeight="25.0" prefWidth="253.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
          </children>
       </GridPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;..\Resources\GUI1.gif&quot;);" styleClass="anchorLogin" stylesheets="@../../../../../../../../FxScreens/app-styles.css" />
   </children>
 </VBox>

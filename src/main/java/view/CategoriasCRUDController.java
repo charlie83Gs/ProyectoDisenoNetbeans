@@ -36,18 +36,10 @@ import javafx.scene.Scene;
  *
  * @author Kenneth
  */
-public class ClienteCRUDController implements Initializable {
+public class CategoriasCRUDController implements Initializable {
 
     @FXML
     private TableView<Client> table_ClienteCRUD;
-    @FXML
-    private TableColumn<Client, String> column_nombre;
-    @FXML
-    private TableColumn<Client, String> column_email;
-    @FXML
-    private TableColumn<Client, String> column_telefono;
-    @FXML
-    private TableColumn<Client, String> column_id;
     @FXML
     private Button btn_CrearActualizarClienteCRUD;
     @FXML
@@ -66,6 +58,14 @@ public class ClienteCRUDController implements Initializable {
     private TextField text_telefonoClienteCRUD;
     @FXML
     private TextField text_edadClienteCRUD;
+    @FXML
+    private TableColumn<Client, String> column_nombre;
+    @FXML
+    private TableColumn<Client, String> column_email;
+    @FXML
+    private TableColumn<Client, String> column_telefono;
+    @FXML
+    private TableColumn<Client, String> column_id;
 
     
     private void handler_btn_CrearActualizarClienteCRUD(ActionEvent event) {
@@ -122,7 +122,7 @@ public class ClienteCRUDController implements Initializable {
             GetAllCommand<Client> getClients = new GetAllCommand(payload);
             clients = getClients.execute();
         } catch (Exception ex) {
-            Logger.getLogger(ClienteCRUDController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoriasCRUDController.class.getName()).log(Level.SEVERE, null, ex);
             return FXCollections.observableArrayList();
         }
         return FXCollections.observableArrayList(clients);
