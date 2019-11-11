@@ -40,7 +40,7 @@ public class Employee extends User{
     private List<Study> studies = new ArrayList<>();
     
     
-    @OneToOne
+    @OneToOne()
     private AttentionCenter attentionCenter;
     
     private Employee(){
