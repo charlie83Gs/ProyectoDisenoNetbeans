@@ -77,7 +77,7 @@
             <Button fx:id="btn_VerClientesAdmin" mnemonicParsing="false" onAction="#handler_btn_VerClientesAdmin" prefHeight="25.0" prefWidth="192.0" text="Ver Clientes" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="22" />
             <Button fx:id="btn_VerEmpleadosAdmin" mnemonicParsing="false" onAction="#verEmpleadosAdminBtnPressed" prefHeight="25.0" prefWidth="192.0" text="Ver Empleados" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.rowIndex="22" />
             <Button fx:id="btn_AtrasAdmin" mnemonicParsing="false" onAction="#atrasAdminBtnPressed" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
-            <Button fx:id="btn_Categorias" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Ver Categorias" GridPane.columnIndex="4" GridPane.rowIndex="22" />
+            <Button fx:id="btn_Categorias" mnemonicParsing="false" onAction="#verCategoriasBtnPressed" prefHeight="25.0" prefWidth="150.0" text="Ver Categorias" GridPane.columnIndex="4" GridPane.rowIndex="22" />
             <Button fx:id="btn_verCentros" mnemonicParsing="false" onAction="#handle_btn_verCentros" prefHeight="25.0" prefWidth="107.0" text="Ver Centros" GridPane.columnIndex="5" GridPane.rowIndex="22" />
          </children>
       </GridPane>
