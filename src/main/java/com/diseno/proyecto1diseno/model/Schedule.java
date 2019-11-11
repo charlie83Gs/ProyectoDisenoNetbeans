@@ -8,6 +8,7 @@ package com.diseno.proyecto1diseno.model;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -22,6 +23,7 @@ import javax.persistence.TemporalType;
 @Table(name="schedules")
 public class Schedule {
     @Id
+    @GeneratedValue
     private int id;
     @Basic
     @Temporal(TemporalType.DATE)

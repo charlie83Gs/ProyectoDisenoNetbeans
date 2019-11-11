@@ -14,14 +14,22 @@ import controller.Payload;
  */
 public class DeleteCommand<T> implements Command{
 
-    public DeleteCommand(Payload payload) {
+    /**
+     * Requires a payload containing
+     * "id" : int
+     * "class" : Class
+     * @return null
+     */
+    public DeleteCommand(Payload payload) throws Exception {
         this.payload = payload;
+        if(!this.payload.contains("class")) throw new Exception("Invalid payload requires \"class\" of type T");
+        if(!this.payload.contains("id")) throw new Exception("Invalid payload requires \"id\" of type Integer");
     }
     Payload payload;
 
     /**
-     * @see "id" : int
-     * @see "class" : Class
+     * @see  "id" : int
+     * @see  "class" : Class
      * @return null
      */
     @Override

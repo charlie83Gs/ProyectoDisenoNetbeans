@@ -14,15 +14,22 @@ import java.util.ArrayList;
  * @author Charlie
  */
 public class GetAllCommand<T> implements Command{
-
-    public GetAllCommand(Payload payload) {
+    
+    /**
+     * Requires a payload containing
+     * "class" Class
+     * @return 
+     */
+    public GetAllCommand(Payload payload) throws Exception {
         this.payload = payload;
+        if(!this.payload.contains("class")) throw new Exception("Invalid payload requires \"class\" of type Class");
     }
     Payload payload;
     
     /**
-     * @see "class" Class
-     * @return 
+     * Requires a payload containing
+     * "class" Class
+     * @return Arraylist<T>
      */
     @Override
     public ArrayList<T> execute() {
