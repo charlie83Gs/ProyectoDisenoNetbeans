@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginScreenController">
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginScreenController">
   <children>
       <GridPane>
         <columnConstraints>
@@ -46,20 +46,15 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btn_registrarse" mnemonicParsing="false" prefHeight="25.0" prefWidth="232.0" text="Registrarse" GridPane.columnIndex="2" GridPane.rowIndex="18" />
-            <Button fx:id="btn_inicioSesion" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="18" />
-            <SplitMenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="255.0" text="SplitMenuButton" GridPane.columnIndex="2" GridPane.rowIndex="16">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </SplitMenuButton>
+            <Button fx:id="btn_registrarse" mnemonicParsing="false" onAction="#handler_btn_registrarse" prefHeight="25.0" prefWidth="232.0" text="Registrarse" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+            <Button fx:id="btn_inicioSesion" mnemonicParsing="false" onAction="#handler_btn_inicioSesion" prefHeight="25.0" prefWidth="246.0" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="18" />
             <Label text="Tipo de Usuario" GridPane.columnIndex="1" GridPane.rowIndex="16" />
             <Label text="Contraseña" GridPane.columnIndex="1" GridPane.rowIndex="15" />
             <PasswordField GridPane.columnIndex="2" GridPane.rowIndex="15" />
             <Label text="Correo Electrónico" GridPane.columnIndex="1" GridPane.rowIndex="14" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="14" />
             <Button fx:id="btn_AtrasLogin" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" text="Atrás" />
+            <ComboBox fx:id="combo_tipousuario" prefHeight="25.0" prefWidth="253.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
          </children>
       </GridPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;..\Resources\GUI1.gif&quot;);" styleClass="anchorLogin" stylesheets="@../../../../../../../../FxScreens/app-styles.css" />
