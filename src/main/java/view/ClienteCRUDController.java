@@ -98,7 +98,8 @@ public class ClienteCRUDController implements Initializable {
     @FXML
     private void handler_btn_EliminarCliente(ActionEvent event) {
         tempClient = table_ClienteCRUD.getSelectionModel().getSelectedItem();
-        
+        if(tempClient == null)
+            return;
         Payload payload = new Payload();
         payload.addContent("id", tempClient.getId());
         payload.addContent("class", Client.class);
