@@ -54,12 +54,12 @@
          <children>
             <TableView fx:id="table_ReportesAdmin" prefHeight="210.0" prefWidth="749.0" GridPane.columnIndex="2" GridPane.columnSpan="7" GridPane.rowIndex="4" GridPane.rowSpan="7">
               <columns>
-                <TableColumn fx:id="column_tipoServicio" minWidth="150.0" prefWidth="75.0" text="Tipo Servicio" />
-                <TableColumn fx:id="column_cuidador" minWidth="150.0" prefWidth="75.0" text="Cuidador" />
-                  <TableColumn fx:id="column_cliente" minWidth="150.0" prefWidth="75.0" text="Cliente" />
-                  <TableColumn fx:id="column_fecha" minWidth="100.0" prefWidth="75.0" text="Fecha" />
-                  <TableColumn fx:id="column_centro" minWidth="150.0" prefWidth="75.0" text="Centro" />
-                  <TableColumn minWidth="100.0" prefWidth="75.0" text="Monto" />
+                <TableColumn fx:id="column_tipoServicio" minWidth="107.0" prefWidth="107.0" text="Tipo Servicio" />
+                <TableColumn fx:id="column_cuidador" minWidth="139.0" prefWidth="139.0" text="Cuidador" />
+                  <TableColumn fx:id="column_cliente" minWidth="150.0" prefWidth="153.0" text="Cliente" />
+                  <TableColumn fx:id="column_fecha" minWidth="100.0" prefWidth="127.0" text="Fecha" />
+                  <TableColumn fx:id="column_centro" minWidth="78.0" prefWidth="78.0" text="Centro" />
+                  <TableColumn fx:id="column_monto" minWidth="100.0" prefWidth="111.0" text="Monto" />
               </columns>
             </TableView>
             <TableView prefHeight="210.0" prefWidth="749.0" GridPane.columnIndex="2" GridPane.columnSpan="7" GridPane.rowIndex="14" GridPane.rowSpan="7">
@@ -86,9 +86,10 @@
             <DatePicker fx:id="combo_fecha2" GridPane.columnIndex="7" GridPane.rowIndex="3" />
             <ChoiceBox fx:id="combo_CentrosCuidador" prefWidth="150.0" GridPane.columnIndex="8" GridPane.rowIndex="13" />
             <Label text="Centros" GridPane.columnIndex="8" GridPane.rowIndex="12" />
-            <Button fx:id="btn_VerClientesAdmin" mnemonicParsing="false" onAction="#handler_btn_VerClientesAdmin" prefHeight="25.0" prefWidth="292.0" text="Ver Clientes" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="22" />
-            <Button fx:id="btn_VerEmpleadosAdmin" mnemonicParsing="false" onAction="#verEmpleadosAdminBtnPressed" prefHeight="25.0" prefWidth="292.0" text="Ver Empleados" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="22" />
+            <Button fx:id="btn_VerClientesAdmin" mnemonicParsing="false" onAction="#handler_btn_VerClientesAdmin" prefHeight="25.0" prefWidth="192.0" text="Ver Clientes" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="22" />
+            <Button fx:id="btn_VerEmpleadosAdmin" mnemonicParsing="false" onAction="#verEmpleadosAdminBtnPressed" prefHeight="25.0" prefWidth="192.0" text="Ver Empleados" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.rowIndex="22" />
             <Button fx:id="btn_AtrasAdmin" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_Categorias" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Ver Categorias" GridPane.columnIndex="5" GridPane.rowIndex="22" />
          </children>
       </GridPane>
   </children>

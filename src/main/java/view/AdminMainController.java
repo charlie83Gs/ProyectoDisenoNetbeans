@@ -78,6 +78,10 @@ public class AdminMainController implements Initializable {
     private TableColumn<ServiceContract, Date> column_fecha;
     @FXML
     private TableColumn<ServiceContract, AttentionCenter> column_centro;
+    @FXML
+    private TableColumn<ServiceContract, Float> column_monto;
+    @FXML
+    private Button btn_Categorias;
 
     
     @FXML
@@ -96,18 +100,46 @@ public class AdminMainController implements Initializable {
         }
         catch (IOException e) {
             e.printStackTrace();
+}
         
-    
-    }
     }
     
     @FXML
     private void verEmpleadosAdminBtnPressed(ActionEvent event) {
         System.out.println("You clicked me!");
-    }
+        
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/GUI/EmpleadoCRUD.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+}
+            }
     
     private void atrasAdminBtnPressed(ActionEvent event) {
-        System.out.println("You clicked me!");
+                System.out.println("You clicked me!");
+        
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/GUI/LoginScreen.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+}
+      
     }
     /**
      * Initializes the controller class.
@@ -133,6 +165,7 @@ public class AdminMainController implements Initializable {
         column_cliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
         column_fecha.setCellValueFactory(new PropertyValueFactory<>("dateStart"));
         column_centro.setCellValueFactory(new PropertyValueFactory<>("attentionCenter"));
+        column_monto.setCellValueFactory(new PropertyValueFactory<>("cost"));
         
         ObservableList<ServiceContract> observable = FXCollections.observableArrayList(services);
         

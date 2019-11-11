@@ -7,6 +7,7 @@ package com.diseno.proyecto1diseno;
 
 import com.diseno.proyecto1diseno.HibernateORM.HibernateUtil;
 import com.diseno.proyecto1diseno.HibernateORM.PersistanceData;
+import com.diseno.proyecto1diseno.model.AttentionCenter;
 import com.diseno.proyecto1diseno.model.Client;
 import com.diseno.proyecto1diseno.model.Employee;
 import com.diseno.proyecto1diseno.model.Public;
@@ -252,10 +253,13 @@ public class Test {
             Employee emp = new Employee("CharlieEmp","63387898","carlos@gmail.com", "1234");
             PersistanceData.<Employee>insert(emp);
 
-
+            AttentionCenter attcent = new AttentionCenter();
+            Payload pAddAttentionCenter = new Payload();
+            pAddAttentionCenter.addContent("object", attcent);
+            AddCommand<AttentionCenter> addAttentionCenter = new AddCommand<>(pAddAttentionCenter);
+            addAttentionCenter.execute();
             
-            ServiceContract cont1 = new ServiceContract(service,emp,new Date(),new Date() );
-            
+            ServiceContract cont1 = new ServiceContract(service,emp,new Date(),new Date(),attcent,4500 );
             Payload pAddServiceContract = new Payload();
             pAddServiceContract.addContent("object", cont1);
             
