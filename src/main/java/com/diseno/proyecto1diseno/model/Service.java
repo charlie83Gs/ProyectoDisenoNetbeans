@@ -36,9 +36,8 @@ public class Service {
     private List<Schedule> schedules = new ArrayList<Schedule>();
 
     public Service() {
-    }
-
     
+    }
     
     public Service(String name, Public targetPublic,  List<Schedule> schedules) {
         this.name = name;

@@ -23,7 +23,6 @@ public class AddCommand<T> implements Command{
         this.payload = payload;
         if(!this.payload.contains("object")) throw new Exception("Invalid payload requires \"object\" of type T");
         
-        
     }
     Payload payload;
     

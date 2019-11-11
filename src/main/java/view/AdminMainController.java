@@ -8,6 +8,7 @@ package view;
 import com.diseno.proyecto1diseno.model.AttentionCenter;
 import com.diseno.proyecto1diseno.model.Client;
 import com.diseno.proyecto1diseno.model.Employee;
+import com.diseno.proyecto1diseno.model.Public;
 import com.diseno.proyecto1diseno.model.Service;
 import com.diseno.proyecto1diseno.model.ServiceContract;
 import controller.Payload;
@@ -36,6 +37,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 /**
  * FXML Controller class
@@ -49,19 +51,18 @@ public class AdminMainController implements Initializable {
     @FXML
     private TableColumn<?, ?> table_CuidadorAdmin;
     @FXML
-    private ChoiceBox<?> combo_TipoServicio;
+    private ChoiceBox<Public> combo_TipoServicio;
     @FXML
-    private ChoiceBox<?> combo_Cuidador;
+    private ChoiceBox<Employee> combo_Cuidador;
     @FXML
-    private ChoiceBox<?> combo_Cliente;
+    private ChoiceBox<Client> combo_Cliente;
     @FXML
-    private ChoiceBox<?> combo_CentrosReportes;
+    private ChoiceBox<AttentionCenter> combo_CentrosReportes;
     @FXML
     private DatePicker combo_fecha1;
     @FXML
     private DatePicker combo_fecha2;
-    @FXML
-    private ChoiceBox<?> combo_CentrosCuidador;
+
     @FXML
     private Button btn_VerClientesAdmin;
     @FXML
@@ -196,11 +197,207 @@ public class AdminMainController implements Initializable {
         column_centro.setCellValueFactory(new PropertyValueFactory<>("attentionCenter"));
         column_monto.setCellValueFactory(new PropertyValueFactory<>("cost"));
         
+        
         ObservableList<ServiceContract> observable = FXCollections.observableArrayList(services);
         
         table_ReportesAdmin.getItems().setAll(observable);
         //table_ReportesAdmin.set
+        
+        
+        try {
+            
+            Payload catPayload = new Payload();
+            catPayload.addContent("class",Public.class);
+            GetAllCommand<Public> getPublic = new GetAllCommand<>(catPayload);
+            ArrayList<Public> categories = new ArrayList<>(getPublic.execute());
+            
+            combo_TipoServicio.getItems().addAll(categories);
+            combo_TipoServicio.setConverter(new StringConverter<Public>() {
+            @Override
+            public String toString(Public std) {
+                return std == null ? "" : std.getName();
+            }
 
+            @Override
+            public Public fromString(String s) {
+                Public usr = new Public(s, 0,0);
+                return usr;
+            }
+            });
+            
+            
+            Payload empPayload = new Payload();
+            empPayload.addContent("class",Employee.class);
+            GetAllCommand<Employee> getEmp = new GetAllCommand<>(empPayload);
+            ArrayList<Employee> employees = new ArrayList<>(getEmp.execute());
+            
+            combo_Cuidador.getItems().addAll(employees);
+            combo_Cuidador.setConverter(new StringConverter<Employee>() {
+            @Override
+            public String toString(Employee std) {
+                return std == null ? "" : std.getName();
+            }
+
+            @Override
+            public Employee fromString(String s) {
+                Employee usr = new Employee(s,"","","");
+
+                return usr;
+            }
+            });
+            
+            
+            Payload cliPayload = new Payload();
+            cliPayload.addContent("class",Client.class);
+            GetAllCommand<Client> getCli = new GetAllCommand<>(cliPayload);
+            ArrayList<Client> clients = new ArrayList<>(getCli.execute());
+            
+            
+            combo_Cliente.getItems().addAll(clients);
+            combo_Cliente.setConverter(new StringConverter<Client>() {
+            @Override
+            public String toString(Client std) {
+                return std == null ? "" : std.getName();
+            }
+
+            @Override
+            public Client fromString(String s) {
+                Client usr = new Client(s,"","","");
+
+                return usr;
+            }
+            });
+            
+            
+            Payload attPayload = new Payload();
+            attPayload.addContent("class",AttentionCenter.class);
+            GetAllCommand<AttentionCenter> getAtt = new GetAllCommand<>(attPayload);
+            ArrayList<AttentionCenter> centers = new ArrayList<>(getAtt.execute());
+            
+            
+            combo_CentrosReportes.getItems().addAll(centers);
+            combo_CentrosReportes.setConverter(new StringConverter<AttentionCenter>() {
+            @Override
+            public String toString(AttentionCenter std) {
+                return std == null ? "" : std.getName();
+            }
+
+            @Override
+            public AttentionCenter fromString(String s) {
+                AttentionCenter usr = new AttentionCenter(s);
+
+                return usr;
+            }
+            });
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+         
     }    
     
+    @FXML
+    public void filterByPublic(ActionEvent event){
+        try {
+            Public category = combo_TipoServicio.getValue();
+            
+            Payload payload = new Payload();
+            payload.addContent("class", ServiceContract.class);
+            GetAllCommand<ServiceContract> get = new GetAllCommand(payload);
+            ArrayList<ServiceContract> services = new ArrayList(get.execute());
+            ArrayList<ServiceContract> filtered = new ArrayList<>();
+            
+            for (ServiceContract service : services) {
+                if(service.getService().getTargetPublic() != null && service.getService().getTargetPublic().getId() == category.getId())
+                    filtered.add(service);
+            }
+            
+            table_ReportesAdmin.getItems().setAll(filtered);
+            
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    @FXML
+    public void filterByEmployee(ActionEvent event){
+        try {
+            Employee emp = combo_Cuidador.getValue();
+            
+            Payload payload = new Payload();
+            payload.addContent("class", ServiceContract.class);
+            GetAllCommand<ServiceContract> get = new GetAllCommand(payload);
+            ArrayList<ServiceContract> services = new ArrayList(get.execute());
+            ArrayList<ServiceContract> filtered = new ArrayList<>();
+            
+            for (ServiceContract service : services) {
+                if(service.getEmployee() != null && service.getEmployee().getId() == emp.getId())
+                    filtered.add(service);
+            }
+            
+            table_ReportesAdmin.getItems().setAll(filtered);
+            
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void filterByClient(ActionEvent event){
+        try {
+            Client clt = combo_Cliente.getValue();
+            
+            Payload payload = new Payload();
+            payload.addContent("class", ServiceContract.class);
+            GetAllCommand<ServiceContract> get = new GetAllCommand(payload);
+            ArrayList<ServiceContract> services = new ArrayList(get.execute());
+            ArrayList<ServiceContract> filtered = new ArrayList<>();
+            
+            for (ServiceContract service : services) {
+                if(service.getCliente() != null && service.getCliente().getId() == clt.getId())
+                    filtered.add(service);
+            }
+            
+            table_ReportesAdmin.getItems().setAll(filtered);
+            
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    @FXML
+    public void filterByAttentionCenter(ActionEvent event){
+        try {
+            AttentionCenter center = combo_CentrosReportes.getValue();
+            
+            Payload payload = new Payload();
+            payload.addContent("class", ServiceContract.class);
+            GetAllCommand<ServiceContract> get = new GetAllCommand(payload);
+            ArrayList<ServiceContract> services = new ArrayList(get.execute());
+            ArrayList<ServiceContract> filtered = new ArrayList<>();
+            
+            for (ServiceContract service : services) {
+                if(service.getAttentionCenter() != null && service.getAttentionCenter().getId() == center.getId())
+                    filtered.add(service);
+            }
+            
+            table_ReportesAdmin.getItems().setAll(filtered);
+            
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

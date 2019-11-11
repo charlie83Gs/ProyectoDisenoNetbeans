@@ -61,6 +61,12 @@ public class Public {
     public void setPayment(float payment) {
         this.payment = payment;
     }
+
+    public int getId() {
+        return id;
+    }
+    
+    
     
     
 }
