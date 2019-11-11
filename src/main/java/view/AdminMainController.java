@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -95,14 +97,18 @@ public class AdminMainController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        Payload payload = new Payload();
-        payload.addContent("class", ServiceContract.class);
-        GetAllCommand<ServiceContract> get = new GetAllCommand(payload);
- 
-        ArrayList<ServiceContract> services = get.execute();
-        System.out.println(services.size());
-        System.out.println("Datos cargados.");
+        try {
+            // TODO
+            Payload payload = new Payload();
+            payload.addContent("class", ServiceContract.class);
+            GetAllCommand<ServiceContract> get = new GetAllCommand(payload);
+            
+            ArrayList<ServiceContract> services = get.execute();
+            System.out.println(services.size());
+            System.out.println("Datos cargados.");
+        } catch (Exception ex) {
+            Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
 }
