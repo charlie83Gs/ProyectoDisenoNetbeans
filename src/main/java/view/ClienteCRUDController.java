@@ -6,8 +6,9 @@
 package view;
 
 import com.diseno.proyecto1diseno.model.Client;
-import com.diseno.proyecto1diseno.model.ServiceContract;
 import controller.Payload;
+import controller.command.UpdateCommand;
+import controller.command.DeleteCommand;
 import controller.command.GetAllCommand;
 import java.io.IOException;
 import java.net.URL;
@@ -67,15 +68,52 @@ public class ClienteCRUDController implements Initializable {
     @FXML
     private TextField text_edadClienteCRUD;
 
+
+    Client tempClient;
     
-    private void handler_btn_CrearActualizarClienteCRUD(ActionEvent event) {
-        System.out.println("You clicked me!");
+    @FXML
+    private void handler_btn_ActualizarClienteCRUD(ActionEvent event) {
+        if(tempClient != null){
+            Payload payload = new Payload();
+            
+            tempClient.setName(text_nombreClienteCRUD.getText());
+            tempClient.setEmail(text_emailClienteCRUD.getText());
+            tempClient.setPhone(text_telefonoClienteCRUD.getText());
+            
+            payload.addContent("object", tempClient);
+            try {
+                UpdateCommand command = new UpdateCommand(payload);
+                command.execute();
+            } catch (Exception ex) {
+                Logger.getLogger(ClienteCRUDController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            text_nombreClienteCRUD.clear();
+            text_emailClienteCRUD.clear();
+            text_telefonoClienteCRUD.clear();
+        }
+        
+        tempClient = null;
+        table_ClienteCRUD.setItems(clients());
     }
-    
+    @FXML
     private void handler_btn_EliminarCliente(ActionEvent event) {
-        System.out.println("You clicked me!");
+        tempClient = table_ClienteCRUD.getSelectionModel().getSelectedItem();
+        
+        Payload payload = new Payload();
+        payload.addContent("id", tempClient.getId());
+        payload.addContent("class", Client.class);
+        
+        try {
+            DeleteCommand<Client> delete = new DeleteCommand(payload);
+            delete.execute();
+        } catch (Exception ex) {
+            Logger.getLogger(ClienteCRUDController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        tempClient = null;
+        table_ClienteCRUD.setItems(clients());
     }
-    
+    @FXML
     private void handler_btn_AtrasClienteCRUD(ActionEvent event) {
         Parent root;
         try {
@@ -91,13 +129,17 @@ public class ClienteCRUDController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+    @FXML
     private void handler_btn_VerCliente(ActionEvent event) {
         System.out.println("You clicked me!");
     }
-    
+    @FXML
     private void handler_btn_ModificarCliente(ActionEvent event) {
-        System.out.println("You clicked me!");
+        tempClient = table_ClienteCRUD.getSelectionModel().getSelectedItem();
+        
+        text_nombreClienteCRUD.setText(tempClient.getName());
+        text_emailClienteCRUD.setText(tempClient.getEmail());
+        text_telefonoClienteCRUD.setText(tempClient.getPhone());
     }
     
     /**
@@ -119,8 +161,8 @@ public class ClienteCRUDController implements Initializable {
         ArrayList<Client> clients;
         
         try {
-            GetAllCommand<Client> getClients = new GetAllCommand(payload);
-            clients = getClients.execute();
+            GetAllCommand<Client> command = new GetAllCommand(payload);
+            clients = command.execute();
         } catch (Exception ex) {
             Logger.getLogger(ClienteCRUDController.class.getName()).log(Level.SEVERE, null, ex);
             return FXCollections.observableArrayList();

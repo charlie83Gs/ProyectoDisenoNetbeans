@@ -60,20 +60,18 @@
                </columns>
             </TableView>
             <Label text="Cliente" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="btn_CrearActualizarClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="244.0" text="Crear/Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
-            <Button fx:id="btn_AtrasClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
-            <Button fx:id="btn_EliminarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="Elininar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <Button fx:id="btn_VerCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-            <Button fx:id="btn_ModificarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="239.0" text="Modificar" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_CrearActualizarClienteCRUD" onAction="#handler_btn_ActualizarClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="244.0" text="Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
+            <Button fx:id="btn_AtrasClienteCRUD" onAction="#handler_btn_AtrasClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_EliminarCliente" onAction="#handler_btn_EliminarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="Eliminar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_VerCliente" onAction="#handler_btn_VerCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button fx:id="btn_ModificarCliente" onAction="#handler_btn_ModificarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="239.0" text="Modificar" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <Label text="Nombre:" GridPane.columnIndex="2" GridPane.rowIndex="14" />
             <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="15" />
             <Label text="Teléfono:" GridPane.columnIndex="2" GridPane.rowIndex="16" />
-            <Label text="Edad:" GridPane.columnIndex="2" GridPane.rowIndex="17" />
             <TextField fx:id="text_nombreClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="14" />
             <TextField fx:id="text_emailClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="15" />
             <TextField fx:id="text_telefonoClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="16" />
-            <TextField fx:id="text_edadClienteCRUD" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="17" />
-         </children>
+          </children>
       </GridPane>
   </children>
 </VBox>
