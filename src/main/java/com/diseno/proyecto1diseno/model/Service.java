@@ -40,6 +40,12 @@ public class Service {
         this.targetPublic = targetPublic;
         this.schedules = schedules;
     }
-    
-    
+
+    public String getName() {
+        return name;
+    }
+
+    public Public getTargetPublic() {
+        return targetPublic;
+    }
 }
