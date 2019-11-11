@@ -58,10 +58,8 @@
             <TextField fx:id="text_CorreoRegistro" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="8" />
             <Label text="Teléfono" GridPane.columnIndex="2" GridPane.rowIndex="9" />
             <TextField fx:id="text_TelefonoRegistro" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="10" />
-            <Label text="Edad" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-            <TextField fx:id="text_EdadRegistro" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="12" />
-            <Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="13" />
-            <PasswordField fx:id="text_PasswordRegistro" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+            <Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <PasswordField fx:id="text_PasswordRegistro" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="12" />
             <Label text="¿Está siendo actualmente tratado?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="5" />
             <TextArea fx:id="text_tratadoRegistro" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="6" />
             <Label text="¿Ha estado en la cárcel antes?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="7" />
@@ -70,8 +68,8 @@
             <TextArea fx:id="text_pagarRegistro" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="10" />
             <Label text="¿Vive sola o solo?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <TextArea fx:id="text_solosola" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="12" />
-            <Button fx:id="btn_RegistratseRegistro" mnemonicParsing="false" prefHeight="25.0" prefWidth="225.0" text="Registrarse" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="14" />
-            <Button fx:id="btn_AtrasRegistro" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
+            <Button fx:id="btn_RegistratseRegistro" mnemonicParsing="false" onAction="#handler_btn_RegistratseRegistro" prefHeight="25.0" prefWidth="225.0" text="Registrarse" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+            <Button fx:id="btn_AtrasRegistro" mnemonicParsing="false" onAction="#handler_btn_AtrasRegistro" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
          </children>
       </GridPane>
   </children>

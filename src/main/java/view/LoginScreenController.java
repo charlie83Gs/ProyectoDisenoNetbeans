@@ -42,6 +42,8 @@ public class LoginScreenController implements Initializable {
     @FXML private TextField textfieldUsuario;
     @FXML private TextField textfieldPassword;
     
+
+    @FXML
     private void handler_btn_AtrasLogin(ActionEvent event) {
         System.out.println("You clicked me!");
     }
