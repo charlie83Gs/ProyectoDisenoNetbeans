@@ -65,8 +65,8 @@
             <TextArea fx:id="text_telefonoPago" prefHeight="200.0" prefWidth="200.0" promptText="Telefono" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="7" />
             <TextArea fx:id="text_EstadoPago" prefHeight="200.0" prefWidth="200.0" promptText="Estado" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <TextArea fx:id="text_CodigoPostal" prefHeight="200.0" prefWidth="200.0" promptText="Código Postal" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="12" />
-            <Button fx:id="btn_PagoPago" mnemonicParsing="false" onAction="#onAtrasButton" prefHeight="25.0" prefWidth="225.0" text="Pago" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="15" />
-            <Button fx:id="btn_AtrasPago" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
+            <Button fx:id="btn_PagoPago" mnemonicParsing="false" prefHeight="25.0" prefWidth="225.0" text="Pago" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="15" />
+            <Button fx:id="btn_AtrasPago" mnemonicParsing="false" onAction="#onAtrasButton" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
             <TextField fx:id="text_MMYY" promptText="MM/YY" GridPane.columnIndex="2" GridPane.rowIndex="8" />
             <TextField fx:id="text_CVC" promptText="CVC" GridPane.columnIndex="3" GridPane.rowIndex="8" />
             <TextField fx:id="text_PaisPago" promptText="País" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="13" />
