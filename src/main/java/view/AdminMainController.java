@@ -60,6 +60,16 @@ public class AdminMainController implements Initializable {
     private Button btn_VerEmpleadosAdmin;
     @FXML
     private Button btn_AtrasAdmin;
+    @FXML
+    private TableColumn<?, ?> column_tipoServicio;
+    @FXML
+    private TableColumn<?, ?> column_cuidador;
+    @FXML
+    private TableColumn<?, ?> column_cliente;
+    @FXML
+    private TableColumn<?, ?> column_fecha;
+    @FXML
+    private TableColumn<?, ?> column_centro;
 
     
     @FXML
@@ -88,7 +98,6 @@ public class AdminMainController implements Initializable {
         System.out.println("You clicked me!");
     }
     
-    @FXML
     private void atrasAdminBtnPressed(ActionEvent event) {
         System.out.println("You clicked me!");
     }

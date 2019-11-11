@@ -54,11 +54,11 @@
          <children>
             <TableView fx:id="table_ReportesAdmin" prefHeight="210.0" prefWidth="749.0" GridPane.columnIndex="2" GridPane.columnSpan="7" GridPane.rowIndex="4" GridPane.rowSpan="7">
               <columns>
-                <TableColumn minWidth="150.0" prefWidth="75.0" text="Tipo Servicio" />
-                <TableColumn minWidth="150.0" prefWidth="75.0" text="Cuidador" />
-                  <TableColumn minWidth="150.0" prefWidth="75.0" text="Cliente" />
-                  <TableColumn minWidth="100.0" prefWidth="75.0" text="Fecha" />
-                  <TableColumn minWidth="150.0" prefWidth="75.0" text="Centro" />
+                <TableColumn fx:id="column_tipoServicio" minWidth="150.0" prefWidth="75.0" text="Tipo Servicio" />
+                <TableColumn fx:id="column_cuidador" minWidth="150.0" prefWidth="75.0" text="Cuidador" />
+                  <TableColumn fx:id="column_cliente" minWidth="150.0" prefWidth="75.0" text="Cliente" />
+                  <TableColumn fx:id="column_fecha" minWidth="100.0" prefWidth="75.0" text="Fecha" />
+                  <TableColumn fx:id="column_centro" minWidth="150.0" prefWidth="75.0" text="Centro" />
                   <TableColumn minWidth="100.0" prefWidth="75.0" text="Monto" />
               </columns>
             </TableView>
