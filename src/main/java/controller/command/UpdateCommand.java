@@ -13,13 +13,20 @@ import controller.Payload;
  * @author Charlie
  */
 public class UpdateCommand<T> implements Command{
-
-    public UpdateCommand(Payload payload) {
+     /**
+     *  Requires a payload containing
+     *  "object" Object @entity
+     * @return null
+     */
+    public UpdateCommand(Payload payload) throws Exception {
         this.payload = payload;
+                if(!this.payload.contains("object")) throw new Exception("Invalid payload requires \"object\" of type T");
+
     }
     Payload payload;
      /**
-     * @see "object" Object @entity
+      * Requires a payload containing
+     * "object" Object @entity
      * @return null
      */
     @Override

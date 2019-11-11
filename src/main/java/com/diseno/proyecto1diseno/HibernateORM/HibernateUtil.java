@@ -29,6 +29,7 @@ public class HibernateUtil {
                 .addAnnotatedClass(Complain.class)
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Task.class)
                 .addAnnotatedClass(Role.class)
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Calification.class)

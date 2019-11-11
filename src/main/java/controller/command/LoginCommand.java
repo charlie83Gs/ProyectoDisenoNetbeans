@@ -15,14 +15,23 @@ import controller.Payload;
  */
 public class LoginCommand<T> implements Command{
 
-    public LoginCommand(Payload payload) {
+    /**
+     * Requires a payload containing
+     * "name" String
+     * "password" String 
+     * @return Boolean
+     */
+    public LoginCommand(Payload payload) throws Exception {
         this.payload = payload;
+        if(!this.payload.contains("name")) throw new Exception("Invalid payload requires \"name\" of type String");
+        if(!this.payload.contains("password")) throw new Exception("Invalid payload requires \"password\" of type String");
     }
     Payload payload;
     
     /**
-     * @see "name" String
-     * @see "pasword" String 
+     * Requires a payload containing
+     *  "name" String
+     *  "pasword" String 
      * @return Boolean
      */
     @Override

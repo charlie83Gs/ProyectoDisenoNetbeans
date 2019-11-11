@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.OneToOne;
@@ -25,6 +26,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 @Table(name="services")
 public class Service {
     @Id
+    @GeneratedValue
     private int id;
     private String name;
     @OneToOne(fetch = FetchType.LAZY)
