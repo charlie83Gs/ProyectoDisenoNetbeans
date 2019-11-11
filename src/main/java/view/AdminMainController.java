@@ -100,9 +100,15 @@ public class AdminMainController implements Initializable {
         }
         catch (IOException e) {
             e.printStackTrace();
+
+        
+    
+    }
+
 }
         
-    }
+
+    
     
     @FXML
     private void verEmpleadosAdminBtnPressed(ActionEvent event) {
@@ -120,8 +126,8 @@ public class AdminMainController implements Initializable {
         }
         catch (IOException e) {
             e.printStackTrace();
-}
-            }
+        }
+    }
     
     private void atrasAdminBtnPressed(ActionEvent event) {
                 System.out.println("You clicked me!");
@@ -138,7 +144,7 @@ public class AdminMainController implements Initializable {
         }
         catch (IOException e) {
             e.printStackTrace();
-}
+    }
       
     }
     /**

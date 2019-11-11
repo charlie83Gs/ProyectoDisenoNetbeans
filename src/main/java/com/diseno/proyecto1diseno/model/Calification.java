@@ -23,8 +23,40 @@ public class Calification {
     @GeneratedValue
     private int id;
     private String comment;
+
+    public Calification(int value, String comment) {
+        this.value = value;
+
+        this.comment = comment;
+    }
     
     public Calification() {
     }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+    
+    
     
 }

@@ -7,6 +7,7 @@ package controller;
 
 import com.diseno.proyecto1diseno.HibernateORM.PersistanceData;
 import com.diseno.proyecto1diseno.model.User;
+import java.util.HashMap;
 
 /**
  *
@@ -15,6 +16,7 @@ import com.diseno.proyecto1diseno.model.User;
 public class LocalSession {
     // static variable single_instance of type Singleton 
     private static LocalSession single_instance = null; 
+    private HashMap<String, Object> sesionData = new HashMap<>();
     
     User user;
     SessionType type;
@@ -42,5 +44,17 @@ public class LocalSession {
         if (user != null) type = SessionType.EMPLOYEE;
         
         return user != null;
+    }
+    
+    public void addData(String key, Object data){
+        sesionData.put(key, data);
+    } 
+    
+    public Object getData(String key){
+        return sesionData.get(key);
+    }
+    
+    public boolean contains(String key){
+        return sesionData.containsKey(key);
     }
 }
