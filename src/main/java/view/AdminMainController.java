@@ -5,15 +5,22 @@
  */
 package view;
 
+import com.diseno.proyecto1diseno.model.AttentionCenter;
+import com.diseno.proyecto1diseno.model.Client;
+import com.diseno.proyecto1diseno.model.Employee;
+import com.diseno.proyecto1diseno.model.Service;
 import com.diseno.proyecto1diseno.model.ServiceContract;
 import controller.Payload;
 import controller.command.GetAllCommand;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -27,6 +34,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -37,7 +45,7 @@ import javafx.stage.Stage;
 public class AdminMainController implements Initializable {
 
     @FXML
-    private TableView<?> table_ReportesAdmin;
+    private TableView<ServiceContract> table_ReportesAdmin;
     @FXML
     private TableColumn<?, ?> table_CuidadorAdmin;
     @FXML
@@ -61,15 +69,15 @@ public class AdminMainController implements Initializable {
     @FXML
     private Button btn_AtrasAdmin;
     @FXML
-    private TableColumn<?, ?> column_tipoServicio;
+    private TableColumn<ServiceContract, Service> column_tipoServicio;
     @FXML
-    private TableColumn<?, ?> column_cuidador;
+    private TableColumn<ServiceContract, Employee> column_cuidador;
     @FXML
-    private TableColumn<?, ?> column_cliente;
+    private TableColumn<ServiceContract, Client> column_cliente;
     @FXML
-    private TableColumn<?, ?> column_fecha;
+    private TableColumn<ServiceContract, Date> column_fecha;
     @FXML
-    private TableColumn<?, ?> column_centro;
+    private TableColumn<ServiceContract, AttentionCenter> column_centro;
 
     
     @FXML
@@ -90,7 +98,7 @@ public class AdminMainController implements Initializable {
             e.printStackTrace();
         
     
-}
+    }
     }
     
     @FXML
@@ -106,18 +114,30 @@ public class AdminMainController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ArrayList<ServiceContract> services = null;
         try {
             // TODO
             Payload payload = new Payload();
             payload.addContent("class", ServiceContract.class);
             GetAllCommand<ServiceContract> get = new GetAllCommand(payload);
             
-            ArrayList<ServiceContract> services = get.execute();
+            services= get.execute();
             System.out.println(services.size());
             System.out.println("Datos cargados.");
         } catch (Exception ex) {
             Logger.getLogger(AdminMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
+               
+        column_tipoServicio.setCellValueFactory(new PropertyValueFactory<>("service"));
+        column_cuidador.setCellValueFactory(new PropertyValueFactory<>("employee"));
+        column_cliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+        column_fecha.setCellValueFactory(new PropertyValueFactory<>("dateStart"));
+        column_centro.setCellValueFactory(new PropertyValueFactory<>("attentionCenter"));
+        
+        ObservableList<ServiceContract> observable = FXCollections.observableArrayList(services);
+        
+        table_ReportesAdmin.getItems().setAll(observable);
+        //table_ReportesAdmin.set
 
     }    
     

@@ -26,6 +26,10 @@ public class ServiceContract {
     private Employee employee;
     private Date dateStart;
     private Date dateEnd;
+    @OneToOne
+    private Client cliente;
+    @OneToOne
+    private AttentionCenter attentionCenter;
 
     public ServiceContract() {
     }
