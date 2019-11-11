@@ -104,7 +104,7 @@ public class PublicCRUDController implements Initializable {
             text_costoCategoriaCRUD.clear();
             text_pagoCategoriaCRUD.clear();
         } else {
-            tempPublic = new Public(text_nombreCategoriaCRUD.getText());
+            tempPublic = new Public(text_nombreCategoriaCRUD.getText(), 5000, 6000);
             
             Payload payload = new Payload();
 
