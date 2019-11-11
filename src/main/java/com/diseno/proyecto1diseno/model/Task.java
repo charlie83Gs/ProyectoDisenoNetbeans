@@ -5,14 +5,24 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Charlie
  */
+@Entity
+@Table(name="tasks")
 public class Task {
     String name;
     String description;
-
+    @Id
+    @GeneratedValue
+    private int id;
+    
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
@@ -32,6 +42,14 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

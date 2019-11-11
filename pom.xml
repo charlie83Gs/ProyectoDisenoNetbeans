@@ -126,14 +126,9 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.1.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>postgresql-9.2-1002.jdbc4</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.2-1002-jdbc4</version>
         </dependency>
     </dependencies>
 </project>

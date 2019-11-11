@@ -6,14 +6,31 @@
 package com.diseno.proyecto1diseno.model;
 
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 /**
  *
  * @author Charlie
  */
+@Entity
+@Table(name="schedules")
 public class Schedule {
-    private Date start;
-    private Date end;
+    @Id
+    @GeneratedValue
+    private int id;
+    @Basic
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+    @Basic
+    @Temporal(TemporalType.DATE)
+    private Date endDate;
     private boolean monday;
     private boolean thuesday;
     private boolean wednesday;
@@ -22,25 +39,25 @@ public class Schedule {
     private boolean saturday;
     private boolean sunday;
 
-    public Schedule(Date start, Date end) {
-        this.start = start;
-        this.end = end;
+    public Schedule(Date startDate, Date endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public Date getStart() {
-        return start;
+        return startDate;
     }
 
-    public void setStart(Date start) {
-        this.start = start;
+    public void setStart(Date startDate) {
+        this.startDate = startDate;
     }
 
     public Date getEnd() {
-        return end;
+        return endDate;
     }
 
-    public void setEnd(Date end) {
-        this.end = end;
+    public void setEnd(Date endDate) {
+        this.endDate = endDate;
     }
 
     public boolean isMonday() {

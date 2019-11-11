@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.diseno.proyecto1diseno.model;
+package controller;
 
 /**
  *
  * @author Charlie
  */
-public enum RequestType {
-    ADD,
-    REMOVE,
-    GET_ALL,
-    GET_BY_ID,
-    COUNT
+public enum SessionType {
+    CLIENT,
+    EMPLOYEE,
+    ADMIN
 }

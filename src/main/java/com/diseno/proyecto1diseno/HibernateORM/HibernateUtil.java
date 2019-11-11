@@ -29,7 +29,16 @@ public class HibernateUtil {
                 .addAnnotatedClass(Complain.class)
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(User.class)
-            ;
+                .addAnnotatedClass(Task.class)
+                .addAnnotatedClass(Role.class)
+                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Calification.class)
+                .addAnnotatedClass(Study.class)
+                .addAnnotatedClass(Public.class)
+                .addAnnotatedClass(Schedule.class)
+                .addAnnotatedClass(Service.class)
+                ;
+            
             sessionFactory = connection.buildSessionFactory();
             
         } catch (Throwable ex) {
