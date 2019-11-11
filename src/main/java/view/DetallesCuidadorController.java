@@ -155,11 +155,12 @@ public class DetallesCuidadorController implements Initializable {
     
     @FXML
     public void onServiceHandle(ActionEvent event){
+        System.out.println("Service combo box !! ---------------------------------------");
         try {
-            System.out.println("Category: " + comboService.getValue().getName());
+            System.out.println("Service -- : " + comboService.getValue().getName());
             Service serv = comboService.getValue();
             
-            LocalSession.getInstance().addData("services", serv);
+            LocalSession.getInstance().addData("service", serv);
             buttonSolicitar.setDisable(false);
             
             
@@ -167,5 +168,26 @@ public class DetallesCuidadorController implements Initializable {
             Logger.getLogger(ClienteMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    
+    @FXML
+    void onSolicitarButton(ActionEvent event) {
+        System.out.println("You clicked me!");
+        
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/GUI/Pago.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        
+    
+        }
     }
 }
