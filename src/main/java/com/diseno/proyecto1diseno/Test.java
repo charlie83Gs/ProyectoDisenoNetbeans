@@ -248,12 +248,6 @@ public class Test {
         }
     }
     
-     }
-    
-        public static void testServiceContractCrud(){
-        //ServiceContract cont1 = new ServiceContract();
-        //    public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd) {
-
-    }
+   
 
 }
