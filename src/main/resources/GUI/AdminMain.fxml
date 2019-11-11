@@ -86,9 +86,10 @@
             <DatePicker fx:id="combo_fecha2" GridPane.columnIndex="7" GridPane.rowIndex="3" />
             <ChoiceBox fx:id="combo_CentrosCuidador" prefWidth="150.0" GridPane.columnIndex="8" GridPane.rowIndex="13" />
             <Label text="Centros" GridPane.columnIndex="8" GridPane.rowIndex="12" />
-            <Button fx:id="btn_VerClientesAdmin" mnemonicParsing="false" onAction="#handler_btn_VerClientesAdmin" prefHeight="25.0" prefWidth="292.0" text="Ver Clientes" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="22" />
-            <Button fx:id="btn_VerEmpleadosAdmin" mnemonicParsing="false" onAction="#verEmpleadosAdminBtnPressed" prefHeight="25.0" prefWidth="292.0" text="Ver Empleados" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="22" />
+            <Button fx:id="btn_VerClientesAdmin" mnemonicParsing="false" onAction="#handler_btn_VerClientesAdmin" prefHeight="25.0" prefWidth="192.0" text="Ver Clientes" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="22" />
+            <Button fx:id="btn_VerEmpleadosAdmin" mnemonicParsing="false" onAction="#verEmpleadosAdminBtnPressed" prefHeight="25.0" prefWidth="192.0" text="Ver Empleados" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.rowIndex="22" />
             <Button fx:id="btn_AtrasAdmin" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
+            <Button fx:id="btn_Categorias" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Ver Categorias" GridPane.columnIndex="5" GridPane.rowIndex="22" />
          </children>
       </GridPane>
   </children>
