@@ -5,10 +5,15 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  *
@@ -23,13 +28,18 @@ public class Role {
     private int id;
     String name;
     float salary;
-    Task[] task;
+    @OneToMany()
+    @LazyCollection(LazyCollectionOption.FALSE)
+    List<Task> task = new ArrayList<>();
 
-    public Role(String name, float salary, Task[] task) {
+    public Role(String name, float salary, List<Task> task) {
         this.id = CID++;
         this.name = name;
         this.salary = salary;
         this.task = task;
+    }
+
+    public Role() {
     }
 
     public String getName() {
@@ -48,13 +58,15 @@ public class Role {
         this.salary = salary;
     }
 
-    public Task[] getTask() {
+    public List<Task> getTask() {
         return task;
     }
 
-    public void setTask(Task[] task) {
+    public void setTask(List<Task> task) {
         this.task = task;
     }
+
+    
     
     
 }

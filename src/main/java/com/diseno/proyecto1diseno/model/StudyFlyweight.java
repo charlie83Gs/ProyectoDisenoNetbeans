@@ -17,6 +17,9 @@ public class StudyFlyweight {
     public void registerStudy(String pNombre, Study pStudy){
         
     }
+
+    public StudyFlyweight() {
+    }
     
     public Study getStudy(String pStudy){
         Study a = null;

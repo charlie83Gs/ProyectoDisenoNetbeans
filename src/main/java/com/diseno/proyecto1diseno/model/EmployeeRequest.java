@@ -20,6 +20,9 @@ public class EmployeeRequest implements Request{
         this.payload = payload;
         this.employee = employee;
     }
+
+    public EmployeeRequest() {
+    }
     
     
     

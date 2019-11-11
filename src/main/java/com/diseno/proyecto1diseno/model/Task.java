@@ -5,6 +5,7 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,11 +23,16 @@ public class Task {
     @Id
     @GeneratedValue
     private int id;
+
+    public Task() {
+    }
     
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
     }
+
+  
 
     public String getName() {
         return name;

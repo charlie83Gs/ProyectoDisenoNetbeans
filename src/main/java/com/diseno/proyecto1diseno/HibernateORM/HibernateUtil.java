@@ -6,8 +6,8 @@
 package com.diseno.proyecto1diseno.HibernateORM;
 
 import com.diseno.proyecto1diseno.model.*;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 /**
  * Hibernate Utility class with a convenient method to get Session Factory
@@ -37,6 +37,8 @@ public class HibernateUtil {
                 .addAnnotatedClass(Public.class)
                 .addAnnotatedClass(Schedule.class)
                 .addAnnotatedClass(Service.class)
+                .addAnnotatedClass(ServiceContract.class)
+                .addAnnotatedClass(AttentionCenter.class)
                 ;
             
             sessionFactory = connection.buildSessionFactory();

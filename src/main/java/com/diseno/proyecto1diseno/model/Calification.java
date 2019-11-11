@@ -24,4 +24,7 @@ public class Calification {
     private int id;
     private String comment;
     
+    public Calification() {
+    }
+    
 }

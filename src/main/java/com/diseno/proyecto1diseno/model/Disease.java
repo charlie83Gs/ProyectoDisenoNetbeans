@@ -29,6 +29,9 @@ public class Disease {
         this.name = name;
         this.description = description;
     }
+
+    public Disease() {
+    }
     
     public int getId() {
         return id;

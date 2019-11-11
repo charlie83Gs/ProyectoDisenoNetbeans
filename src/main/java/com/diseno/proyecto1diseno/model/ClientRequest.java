@@ -43,4 +43,7 @@ public class ClientRequest implements Request{
         return client;
     }
 
+    public ClientRequest() {
+    }
+
 }

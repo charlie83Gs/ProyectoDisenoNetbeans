@@ -14,12 +14,17 @@ import com.diseno.proyecto1diseno.model.Role;
 import com.diseno.proyecto1diseno.model.Schedule;
 import com.diseno.proyecto1diseno.model.Service;
 import com.diseno.proyecto1diseno.model.ServiceBuilder;
+import com.diseno.proyecto1diseno.model.ServiceContract;
 import com.diseno.proyecto1diseno.model.Study;
 import com.diseno.proyecto1diseno.model.Task;
 import controller.Payload;
 import controller.command.AddCommand;
 import controller.command.DeleteCommand;
 import controller.command.FindCommand;
+import java.util.ArrayList;
+
+import java.time.Instant;
+
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +44,8 @@ public class Test {
         testDeleteCommand();
         testAddService();
     }
+    
+
     
     public static void testEmployeeCrud(){
         HibernateUtil.getSessionFactory().getCurrentSession();
@@ -81,12 +88,16 @@ public class Test {
     public static void testAddCommands(){
         
         try {
-            /*Task taskAdmin = new Task("Admin", "take care of the bussines");
+            Task taskAdmin = new Task("Admin", "take care of the bussines");
             Task taskAccounting = new Task("Accounting", "");
             Task taskGovernance = new Task("Governance","");
             
-            Task[] tasks = {taskAdmin, taskAccounting, taskGovernance};
-                    
+            ArrayList<Task> tasks = new ArrayList<>();
+            tasks.add(taskAdmin);
+            tasks.add(taskAccounting);
+            tasks.add(taskGovernance);
+            
+            
             //add admin
             Payload addAdminPayload = new Payload();
             Payload addAccountingPayload = new Payload();
@@ -94,7 +105,7 @@ public class Test {
             
             addAdminPayload.addContent("object", taskAdmin);
             addAccountingPayload.addContent("object", taskAccounting);
-            addGovernancePayload.addContent("object", taskAccounting);
+            addGovernancePayload.addContent("object", taskGovernance);
             
             AddCommand<Task> addAdminTask = new AddCommand<>(addAdminPayload);
             AddCommand<Task> addAccountingTask = new AddCommand<>(addAccountingPayload);
@@ -111,10 +122,10 @@ public class Test {
             AddCommand<Role> addRole = new AddCommand<>(addRolePayload);
             
             addRole.execute();
-            */
+            
 
             Employee emp = new Employee("CharlieEmpCm","63387898","carlos@gmail.com", "1234");
-            //emp.addRole(roleAdmin);
+            emp.addRole(roleAdmin);
             Payload empPayload = new Payload();
             empPayload.addContent("object", emp);
             
@@ -229,15 +240,34 @@ public class Test {
             builder.setName("Children Service v1");
             
             Payload addSservicePayload = new Payload();
-            addSservicePayload.addContent("object",builder.getResult());
+            Service service = builder.getResult();
+            addSservicePayload.addContent("object",service);
             
             
             AddCommand<Service> addService = new AddCommand<>(addSservicePayload);
             addService.execute();
             
+            //-*//*/************************/
+            
+            Employee emp = new Employee("CharlieEmp","63387898","carlos@gmail.com", "1234");
+            PersistanceData.<Employee>insert(emp);
+
+
+            
+            ServiceContract cont1 = new ServiceContract(service,emp,new Date(),new Date() );
+            
+            Payload pAddServiceContract = new Payload();
+            pAddServiceContract.addContent("object", cont1);
+            
+            AddCommand<ServiceContract> addServiceContract = new AddCommand<>(pAddServiceContract);
+            addServiceContract.execute();
+            
+            //public ServiceContract(Service service, Employee employee, Date dateStart, Date dateEnd) {
+            //PersistanceData.<ServiceContract>insert(cont1);
+            
         } catch (Exception ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

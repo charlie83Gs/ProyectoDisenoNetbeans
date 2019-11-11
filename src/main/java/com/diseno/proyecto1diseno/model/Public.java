@@ -24,6 +24,9 @@ public class Public {
     float cost;
     float payment;
 
+    public Public() {
+    }
+
     public Public(String name) {
         this.name = name;
     }
