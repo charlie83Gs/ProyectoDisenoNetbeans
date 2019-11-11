@@ -6,6 +6,8 @@
 package controller;
 
 import com.diseno.proyecto1diseno.HibernateORM.PersistanceData;
+import com.diseno.proyecto1diseno.model.Client;
+import com.diseno.proyecto1diseno.model.Employee;
 import com.diseno.proyecto1diseno.model.User;
 import java.util.HashMap;
 
@@ -38,13 +40,31 @@ public class LocalSession {
     } 
     
     public boolean login(String name, String password){
-        User user = PersistanceData.validateLoginCli(name, password);
+        user = PersistanceData.validateLoginCli(name, password);
         if (user != null) type = SessionType.CLIENT;
         user = PersistanceData.validateLoginEmp(name, password);
         if (user != null) type = SessionType.EMPLOYEE;
-        
+
         return user != null;
     }
+    
+    public boolean loginClient(String name, String password){
+        Client clt = PersistanceData.validateLoginCli(name, password);
+        user = clt;
+        if (user != null) type = SessionType.CLIENT;
+        addData("sessionClient", clt);
+        return user != null;
+    }
+    
+     public boolean loginEmployee(String name, String password){
+        Employee emp = PersistanceData.validateLoginEmp(name, password);
+        user = emp;
+        if (user != null) type = SessionType.EMPLOYEE;
+        addData("sessionEmployee", emp);
+        return user != null;
+    }
+
+    
     
     public void addData(String key, Object data){
         sesionData.put(key, data);

@@ -152,7 +152,9 @@ public class Test {
             Payload cliPayload = new Payload();
             cliPayload.addContent("object", cli);
             
-            Public pub = new Public("public1");
+            //Public pub = new Public("public1", 260, 200);
+            
+            
             Schedule sch = new Schedule(new Date(), new Date());
             sch.setMonday(true);
             sch.setThursday(true);
@@ -161,7 +163,7 @@ public class Test {
             //to build bigger object
             ServiceBuilder servBuilder = new ServiceBuilder();
             servBuilder.addSchedule(sch);
-            servBuilder.setPublic(pub);
+            //servBuilder.setPublic(pub);
             Payload servPayload = new Payload();
             servPayload.addContent("object", servBuilder.getResult());
             
@@ -223,9 +225,9 @@ public class Test {
     
     public static void testAddService(){
         try {
-            Public childrenPublic = new Public("children");
-            Public babyPublic = new Public("baby");
-            Public elderPublic = new Public("elder");
+            Public childrenPublic = new Public("children",250,200);
+            Public babyPublic = new Public("baby",270,160);
+            Public elderPublic = new Public("elder",220,130);
             Payload pAddChildren = new Payload();
             Payload pAddBaby = new Payload();
             Payload pAddElder = new Payload();

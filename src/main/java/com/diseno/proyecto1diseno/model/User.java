@@ -5,6 +5,7 @@
  */
 package com.diseno.proyecto1diseno.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -25,6 +26,7 @@ public class User {
     @Id
     @GeneratedValue
     protected int id;
+    @Column(unique = true)
     protected String name;
     protected String phone;
     protected String email;

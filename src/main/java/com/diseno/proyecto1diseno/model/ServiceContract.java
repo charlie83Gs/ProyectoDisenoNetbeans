@@ -7,6 +7,7 @@ package com.diseno.proyecto1diseno.model;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 import javax.persistence.OneToOne;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ import javax.persistence.Id;
 @Table(name="servicecontracts")
 public class ServiceContract {
     @Id
+    @GeneratedValue
     private int id;
     @OneToOne
     private Service service;
