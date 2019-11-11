@@ -60,7 +60,7 @@
                </columns>
             </TableView>
             <Label text="Cliente" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="btn_CrearActualizarClienteCRUD" onAction="#handler_btn_CrearActualizarClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="244.0" text="Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
+            <Button fx:id="btn_CrearActualizarClienteCRUD" onAction="#handler_btn_ActualizarClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="244.0" text="Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="19" />
             <Button fx:id="btn_AtrasClienteCRUD" onAction="#handler_btn_AtrasClienteCRUD" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Atrás" />
             <Button fx:id="btn_EliminarCliente" onAction="#handler_btn_EliminarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="Eliminar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <Button fx:id="btn_VerCliente" onAction="#handler_btn_VerCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="235.0" text="Ver" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="11" />

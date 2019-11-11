@@ -6,7 +6,6 @@
 package view;
 
 import com.diseno.proyecto1diseno.model.Client;
-import com.diseno.proyecto1diseno.model.ServiceContract;
 import controller.Payload;
 import controller.command.UpdateCommand;
 import controller.command.DeleteCommand;
@@ -70,7 +69,7 @@ public class ClienteCRUDController implements Initializable {
     Client tempClient;
     
     @FXML
-    private void handler_btn_CrearActualizarClienteCRUD(ActionEvent event) {
+    private void handler_btn_ActualizarClienteCRUD(ActionEvent event) {
         if(tempClient != null){
             Payload payload = new Payload();
             
@@ -159,8 +158,8 @@ public class ClienteCRUDController implements Initializable {
         ArrayList<Client> clients;
         
         try {
-            GetAllCommand<Client> getClients = new GetAllCommand(payload);
-            clients = getClients.execute();
+            GetAllCommand<Client> command = new GetAllCommand(payload);
+            clients = command.execute();
         } catch (Exception ex) {
             Logger.getLogger(ClienteCRUDController.class.getName()).log(Level.SEVERE, null, ex);
             return FXCollections.observableArrayList();
