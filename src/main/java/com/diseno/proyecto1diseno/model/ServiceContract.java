@@ -6,6 +6,8 @@
 package com.diseno.proyecto1diseno.model;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.OneToOne;
 import javax.persistence.Id;
 

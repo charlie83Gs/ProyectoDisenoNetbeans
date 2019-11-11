@@ -38,6 +38,9 @@ public class Public {
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    public float getCost() {
+        return cost;
+    }
     
 }
