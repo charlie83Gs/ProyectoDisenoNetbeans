@@ -69,7 +69,7 @@
             <Label text="¿Vive sola o solo?" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <TextArea fx:id="text_solosola" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="12" />
             <Button fx:id="btn_RegistratseRegistro" mnemonicParsing="false" onAction="#handler_btn_RegistratseRegistro" prefHeight="25.0" prefWidth="225.0" text="Registrarse" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="14" />
-            <Button fx:id="btn_AtrasRegistro" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
+            <Button fx:id="btn_AtrasRegistro" mnemonicParsing="false" onAction="#handler_btn_AtrasRegistro" prefHeight="25.0" prefWidth="109.0" text="Atrás" />
          </children>
       </GridPane>
   </children>

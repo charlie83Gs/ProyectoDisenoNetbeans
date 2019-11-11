@@ -9,15 +9,21 @@ import com.diseno.proyecto1diseno.model.AttentionCenter;
 import com.diseno.proyecto1diseno.model.Client;
 import controller.Payload;
 import controller.command.AddCommand;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -77,6 +83,21 @@ public class RegistroController implements Initializable {
     @FXML
     private void handler_btn_AtrasRegistro(ActionEvent event) {
         System.out.println("You clicked me!");
+        
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/GUI/LoginScreen.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+    }
+     
     }
     
     /**
