@@ -108,6 +108,29 @@ public class AdminMainController implements Initializable {
     }
 
 }
+    
+     @FXML
+    private void verCategoriasBtnPressed(ActionEvent event) {
+        System.out.println("You clicked me!");
+        
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/GUI/PublicCRUD.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+
+        
+    
+    }
+
+}
         
 
     
